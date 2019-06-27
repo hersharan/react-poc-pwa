@@ -1,0 +1,62 @@
+// Tabs
+
+.nav-tabs {
+  border-bottom: none;
+  line-height: 50px;
+
+  @media screen and (min-width: $sm) {
+    justify-content: space-between;
+    line-height: 30px;
+  }
+
+  .nav-item {
+    position: relative;
+
+    a {
+      border: none;
+      text-transform: uppercase;
+      color: $black;
+      padding: 0 20px;
+      cursor: pointer;
+      text-align: center;
+
+      @media screen and (min-width: $sm) {
+        font-size: 15px;
+      }
+
+      &.active {
+        border-bottom: 2px solid $black;
+        font-weight: bold;
+        pointer-events: none;
+      }
+    }
+
+    .dropdown-toggle {
+      position: absolute;
+      right: -12px;
+      top: 1px;
+      display: inline-block;
+    }
+  }
+
+  &.nav-fixed {
+    position: fixed;
+    top: 70px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background: $white;
+    padding: 0 75px !important;
+    max-width: 1440px;
+    margin: auto;
+  }
+}
+
+.child-fixed {
+  padding-top: 59px !important;
+}
+
+.tab-content {
+  padding: 15px 0;
+}

@@ -1,0 +1,60 @@
+.courses {
+  flex-direction: column;
+
+  .section-content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .completed {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 15px;
+      bottom: 28px;
+      width: 60px;
+      height: 30px;
+      border-radius: 50%;
+      z-index: 1;
+      background: url('../../images/mark.jpg') no-repeat center center;
+      background-size: cover;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      right: 15px;
+      bottom: 15px;
+      width: 60px;
+      height: 60px;
+      background: rgba(255,255,255,0.7);
+      border-radius: 50%;
+    }
+  }
+}
+
+.sub-heading {
+  &:before {
+    background: url('../../images/left_arrow.svg') no-repeat center center;
+  }
+}
+
+.level-listing {
+  .card-title {
+    max-width: none;
+  }
+
+  picture {
+    img {
+      width: 100%;
+    }
+  }
+
+  .scent-training {
+    &:before {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,233 @@
+.path-user {
+  &.user-logged-out {
+    padding-top: 0 !important;
+
+    .main-nav {
+      display: none;
+    }
+
+    .main-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      flex-direction: column;
+
+      @media screen and (max-width: $xs) {
+        padding: 0 15px;
+      }
+
+      .logo {
+        width: 133px;
+      }
+
+      .logo-tag {
+        margin-bottom: 80px;
+
+        @media screen and (max-width: $xs) {
+          width: 100%;
+          text-align: center;
+          img {
+            width: 150px;
+          }
+        }
+
+        .slogan {
+          text-align: center;
+          font-size: 30px;
+        }
+      }
+
+      .page-content {
+        #block-elx-frontend-breadcrumbs,
+        #block-elx-frontend-page-title {
+          display: none;
+        }
+
+        #block-elx-frontend-content {
+          background-color: $white;
+          max-width: 610px;
+          margin: 0 auto;
+
+          @media screen and (max-width: $xs) {
+            width: 100%;
+          }
+        }
+
+        #block-elx-frontend-local-tasks {
+          &:first-child {
+            li {
+              a {
+                &:not(.is-active) {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+
+        #block-elx-frontend-local-tasks--2,
+        #block-elx-frontend-local-tasks:last-child {
+          li {
+            a {
+              font-size: 18px;
+              line-height: 1.22;
+              color: $black;
+
+              &.is-active {
+                display: none;
+              }
+            }
+          }
+        }
+
+        ul {
+          margin: 0;
+          padding: 0;
+
+          li {
+            margin: 0;
+            list-style: none;
+            text-align: center;
+
+            a {
+              text-decoration: none;
+
+              &.is-active {
+                font-size: 25px;
+                font-weight: 600;
+                line-height: 0.8;
+                color: $black;
+                text-transform: uppercase;
+                margin-bottom: 25px;
+              }
+            }
+          }
+        }
+      }
+
+      form {
+        clear: both;
+        padding: 40px 50px;
+
+        .form-item-persistent-login {
+          color: $grey;
+          font-size: 15px;
+          padding: 20px 0;
+          line-height: normal;
+          line-height: 1.47;
+
+          label {
+            margin: 0;
+            text-transform: capitalize;
+          }
+        }
+      }
+
+      .js-form-item-name,
+      .js-form-item-pass {
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: $grey;
+        border: 1px solid $grey;
+        padding: 3px 10px;
+        width: 100%;
+        margin-bottom: 15px;
+        position: relative;
+
+        @media all and (min-width: $md) {
+          padding: 0.5px 10px;
+          font-size: 15px;
+        }
+
+        &:after {
+          content: " ";
+          background: url("../images/icons.svg") no-repeat 0 -140px;
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 25px;
+          height: 25px;
+          padding-left: 30px;
+          margin: 7px 12px;
+
+          @media all and (min-width: $md) {
+            margin: 3px 10px;
+          }
+        }
+
+        input {
+          color: $black;
+        }
+      }
+
+      .js-form-item-pass {
+        &:after {
+          background: url("../images/icons.svg") no-repeat 0 -245px;
+          height: 21px;
+        }
+      }
+
+      input.form-text {
+        font-size: 15px;
+        margin-top: 0;
+        border: 0;
+        width: 100%;
+        border-radius: 0;
+        padding-left: 30px;
+
+        &:focus {
+          outline: none;
+        }
+
+        &::-webkit-input-placeholder {
+          /* Chrome/Opera/Safari */
+          font-size: 17px;
+          line-height: 1.29;
+          color: $black;
+        }
+
+        ::-moz-placeholder {
+          /* Firefox 19+ */
+          font-size: 17px;
+          line-height: 1.29;
+          color: $black;
+        }
+
+        :-ms-input-placeholder {
+          /* IE 10+ */
+          font-size: 17px;
+          line-height: 1.29;
+          color: $black;
+        }
+
+        :-moz-placeholder {
+          /* Firefox 18- */
+          font-size: 17px;
+          line-height: 1.29;
+          color: $black;
+        }
+      }
+    }
+
+    input.form-submit {
+      width: 100%;
+      color: $white;
+      background-color: $black;
+      border: 0;
+      padding: 13px 0;
+      margin-top: 15px;
+      font-size: 15px;
+    }
+  }
+
+  // Reset Page
+  .user-pass-reset {
+    text-align: center;
+    padding: 60px 0;
+
+    #edit-actions {
+      width: 300px;
+      margin: auto;
+    }
+  }
+}

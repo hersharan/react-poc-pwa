@@ -1,0 +1,65 @@
+.brand-landing {
+  padding: 15px 0;
+
+  .listing-block {
+    position: relative;
+
+    .card-title {
+      position: absolute;
+      bottom: 34px;
+      text-align: center;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.65);
+      width: 100%;
+      display: block;
+      max-width: none;
+      padding: 6px;
+      font-size: 20px;
+    }
+
+    .sub-title {
+      position: relative;
+      padding-top: 0;
+      margin-top: 15px;
+      display: inline-block;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: -1px;
+        right: -25px;
+        width: 20px;
+        height: 20px;
+        background: url('../../images/down_arrow.svg') no-repeat center center;
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  .row, &.row {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.brand-wrapper {
+  .listing {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 30px;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .page-title {
+    margin-bottom: 0;
+  }
+
+  .product-listing {
+    .section-content {
+      padding-top: 30px;
+    }
+  }
+}

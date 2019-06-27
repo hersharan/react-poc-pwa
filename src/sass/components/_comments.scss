@@ -1,0 +1,147 @@
+.story-comment-area {
+  margin-top: 50px;
+
+  .loading {
+    width: 100%;
+
+    .loading-icon {
+      height: 100px;
+      width: 100px;
+    }
+  }
+
+  .story-comments {
+    padding: 5px;
+
+    .comment-tile {
+      border-top: 1px $grey solid;
+      padding-top: 20px;
+
+      .user-avatar {
+        margin-right: 15px;
+
+        img {
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+        }
+      }
+
+      .name {
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .date {
+        font-weight: lighter;
+        font-size: 12px;
+      }
+
+      .comment {
+        font-size: 14px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .comment-buttons {
+      text-align: right;
+      margin-bottom: 10px;
+
+      .more-link {
+        margin: 0 5px;
+
+        a {
+          padding: 2px 25px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .reply-section {
+    padding-left: 10%;
+  }
+
+  .user_uploaded {
+    background: url("../images/upload.png") no-repeat 0 0;
+    width: 20px;
+    height: 20px;
+    text-indent: -10000px;
+    background-color: rgba(230, 228, 228, 0.1);
+    cursor: pointer;
+    box-shadow: inset 0 0 4px 1px #f1f1f1;
+  }
+
+  .user-suggest {
+    position: absolute;
+    min-width: 300px;
+    background: #fff;
+    left: 2px;
+    max-height: 270px;
+    overflow: auto;
+    z-index: 9;
+
+    .user-list {
+      box-shadow: 0 0 1px 1px #f9f9f9;
+      width: 100%;
+      overflow: auto;
+      max-height: 250px;
+      text-align: left;
+      padding: 10px;
+      font-size: 14px;
+
+      p {
+        padding: 2px 5px;
+
+        &:hover, &:focus {
+          background-color: rgba(0, 0, 0, 0.1);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .textarea {
+    appearance: textarea;
+    border: 1px solid gray;
+    overflow: auto;
+    padding: 10px;
+    resize: both;
+    width: 400px;
+    width: 100%;
+    min-height: 100px;
+    text-align: left;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    display: inline-block;
+  }
+
+  .disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  .right-panel {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+  }
+
+  .emoji-icon {
+    width: 18px;
+
+    svg {
+      width: 100%;
+    }
+  }
+
+  .emoji-mart {
+    position: absolute;
+    right: 25px;
+    z-index: 9;
+    width: 250px !important;
+    text-align: left;
+  }
+}

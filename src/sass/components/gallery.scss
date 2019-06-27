@@ -1,0 +1,16 @@
+.alice-carousel__stage-item {
+  padding: 0 15px;
+}
+
+.alice-carousel__dots {
+  .alice-carousel__dots-item {
+    background-color: rgba(0, 0, 0, 0.1);
+    &:only-child {
+      display: none;
+    }
+
+    &.__active {
+      background-color: #000;
+    }
+  }
+}

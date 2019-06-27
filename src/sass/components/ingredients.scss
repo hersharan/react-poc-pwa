@@ -1,0 +1,54 @@
+.ingredient-details {
+  .row {
+    justify-content: center;
+  }
+
+  .sub-heading {
+    &:before {
+      background: url('../../images/left_arrow.svg') no-repeat center center;
+    }
+  }
+
+  .ingredient {
+    width: 100%;
+
+    .page-title {
+      padding-bottom: 0;
+    }
+  }
+
+  .info.summary {
+    padding-top: 0;
+  }
+
+  .information {
+    padding: 30px;
+  }
+
+  .page-title, .section-title {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    text-transform: uppercase;
+    padding-bottom: 30px;
+  }
+
+  .description {
+    padding: 0;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .info {
+    word-break: break-word;
+    line-height: 24px;
+    padding: 30px;
+    border-bottom: 1px solid #ddd;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

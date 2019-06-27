@@ -1,0 +1,109 @@
+@import '../init/variables';
+
+.main-nav {
+  position: sticky;
+  width: 100%;
+  padding: 15px 0 0;
+  font-weight: 500;
+  text-align: center;
+  top: 0;
+  background: #fff;
+  z-index: 9;
+
+  @media all and (min-width: $sm + 1) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 15px 0;
+  }
+
+  @media all and (max-width: $sm) {
+    position: absolute;
+    top: 58px;
+    max-width: $sm;
+    z-index: 9999;
+    left: 0;
+    right: 0;
+    border-bottom: none;
+    margin-left: auto;
+  }
+
+  .navbar {
+    position: relative;
+
+    ul {
+      @media all and (min-width: $sm + 1) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .nav-item {
+    list-style-type: none;
+
+    @media all and (max-width: $sm) {
+      padding: 15px 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      position: relative;
+
+      &:last-child {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .caret {
+        position: absolute;
+        right: 15px;
+        top: 0;
+        width: 20px;
+        height: 48px;
+        bottom: 0;
+        display: inline-block;
+        background-position: center;
+      }
+    }
+
+    @media all and (min-width: $sm + 1) {
+      padding: 0 15px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #000;
+      text-transform: uppercase;
+      font-weight: 400;
+
+      &.active-link {
+        font-weight: 700;
+      }
+    }
+
+    .has-child {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 35px;
+      padding: 15px 0;
+      box-shadow: 0 0 1px 1px rgba(255,255,255,0.1);
+      z-index: 9;
+      background: #fff;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+      @media all and (max-width: $sm) {
+        position: relative;
+        border-bottom: none;
+        flex-direction: column;
+        padding-bottom: 0;
+        top: 0;
+        margin-bottom: -16px;
+      }
+
+      &.open {
+        li {
+          a {
+            color: rgba(122, 122, 122, 1.0);
+          }
+        }
+      }
+    }
+  }
+}

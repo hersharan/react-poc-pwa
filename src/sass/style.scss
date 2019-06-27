@@ -1,0 +1,21 @@
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 1440px
+);
+
+@import "../../node_modules/bootstrap/scss/bootstrap-grid";
+$grid-breakpoints: (
+  xs: 0,
+  sm: 599px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+// Custom Files
+@import "init/variables";
+@import "init/fonts";
+@import "base/base";
+@import "./modules/cards";
+@import "./modules/alert";

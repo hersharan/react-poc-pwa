@@ -1,0 +1,81 @@
+@import '../init/variables';
+
+.top-header {
+  text-transform: uppercase;
+  justify-content: space-between;
+  align-items: center;
+  top: 0 !important;
+  position: relative;
+  z-index: 3;
+
+  @media all and (max-width: $sm) {
+    padding-bottom: 10px;
+  }
+
+  &.logged-in {
+    .logo {
+      @media all and (max-width: $xs) {
+        font-size: 13px;
+        padding-right: 70px;
+      }
+    }
+  }
+
+  .logo {
+    padding: 20px 0;
+    @media all and (min-width: $sm + 1) {
+      text-align: center;
+      width: 100%;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .welcome-msg {
+    font-size: 11px;
+    font-weight: bold;
+    margin: 0;
+    position: absolute;
+    top: 45px;
+    text-transform: initial;
+
+    @media all and (min-width: $sm + 1) {
+      display: none;
+    }
+  }
+
+  .user-icon {
+    position: absolute;
+    right: 55px;
+    top: 17px;
+    overflow: hidden;
+    width: 20px;
+    height: 20px;
+    text-indent: -1000px;
+    background: url('../../images/avatar.svg') no-repeat center center;
+    background-size: cover;
+    cursor: pointer;
+  }
+}
+
+.toggle-bar {
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  z-index: 99;
+
+  @media all and (min-width: $sm + 1) {
+    display: none;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    margin: 0 10px;
+  }
+}

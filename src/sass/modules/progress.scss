@@ -1,0 +1,41 @@
+@import '../init/variables';
+
+.progress-wrapper {
+  width: 90%;
+  margin: 20px auto;
+}
+
+.progress {
+  display: flex;
+  height: 6px;
+  overflow: hidden;
+  font-size: 10px;
+  background-color: rgba(216, 216, 216, 1.0);
+  border-color: rgba(217, 217, 217, 1.0);
+  border-radius: 25px;
+}
+
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #000;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #000;
+  transition: width 0.6s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-bar {
+    transition: none;
+  }
+}
+
+.progress-count {
+  color: rgba(148, 148, 148, 1.0);
+  text-align: left;
+  text-transform: capitalize;
+  font-size: 13px;
+  margin-top: 5px;
+}

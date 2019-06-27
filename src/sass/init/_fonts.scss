@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('/themes/custom/elx_frontend/fonts/HelveticaNeue.eot?#iefix') format('embedded-opentype'),
+  url('/themes/custom/elx_frontend/fonts/HelveticaNeue.woff?v=1.0.0') format('woff'),
+  url('/themes/custom/elx_frontend/fonts/HelveticaNeue.woff2?v=1.0.0') format('woff2'),
+  url('/themes/custom/elx_frontend/fonts/HelveticaNeue.ttf?v=1.0.0') format('truetype'),
+  url('/themes/custom/elx_frontend/fonts/HelveticaNeue.svg?v=1.0.0') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('/themes/custom/elx_frontend/fonts/HelveticaNeueMedium.eot?#iefix') format('embedded-opentype'),
+  url('/themes/custom/elx_frontend/fonts/HelveticaNeueMedium.woff') format('woff'),
+  url('/themes/custom/elx_frontend/fonts/HelveticaNeueMedium.woff2?v=1.0.0') format('woff2'),
+  url('/themes/custom/elx_frontend/fonts/HelveticaNeueMedium.ttf') format('truetype'),
+  url('/themes/custom/elx_frontend/fonts/HelveticaNeueMedium.svg') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('/themes/custom/elx_frontend/fonts/HelveticaNeueBold.eot?#iefix') format('embedded-opentype'),
+  url('/themes/custom/elx_frontend/fonts/HelveticaNeueBold.woff?v=1.0.0') format('woff'),
+  url('/themes/custom/elx_frontend/fonts/HelveticaNeueBold.woff2?v=1.0.0') format('woff2'),
+  url('/themes/custom/elx_frontend/fonts/HelveticaNeueBold.ttf') format('truetype'),
+  url('/themes/custom/elx_frontend/fonts/HelveticaNeueBold.svg') format('svg');
+  font-weight: 700;
+  font-style: normal;
+  font-display: fallback;
+}

@@ -1,0 +1,46 @@
+.card {
+  margin-bottom: 30px;
+
+  &.listing-block {
+    .card-link {
+      width: 100%;
+    }
+  }
+}
+
+.card-link {
+  display: inline-block;
+}
+
+.card-title {
+  text-align: center;
+  padding: 10px 0 5px;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #000;
+  max-width: 240px;
+  text-transform: uppercase;
+
+  a {
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+}
+
+.brand-title {
+  font-weight: 400;
+  padding-top: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #ababab;
+  margin: 0 auto;
+  max-width: 240px;
+}
+
+.sub-title {
+  margin: 0;
+  font-size: 14.0px;
+  color: black;
+  font-weight: 400;
+  padding-top: 15px;
+}

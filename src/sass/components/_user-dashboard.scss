@@ -1,0 +1,319 @@
+// for profile area
+.profile-dashboard {
+  padding: 0;
+  max-width: 100%;
+}
+
+.user-details {
+  background-color: #ececec;
+
+  .view-profile-pic {
+    padding: 45px 60px;
+
+    @media screen and (max-width: $md) {
+      text-align: center;
+      padding: 0;
+    }
+
+    img {
+      width: 200px;
+      border-radius: 50%;
+    }
+  }
+
+  .disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  .edit-btn {
+    margin-top: 0px;
+    text-align: left;
+    padding: 0;
+
+    @media screen and (max-width: $md - 1) {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    a {
+      border-color: #000;
+      color: $black;
+      background-color: $white;
+      font-size: 14px;
+      position: relative;
+      padding: 15px;
+      padding-left: 40px;
+      display: inline-block;
+
+      @media all and (max-width: $md - 1 ) {
+        margin: auto;
+        font-size: 12px;
+      }
+
+      &:hover, &:active{
+        color: black;
+      }
+
+      &:before {
+        content: '';
+        background: url("../images/icons.svg") no-repeat 0 -213px;
+        color: $grey;
+        width: 33px;
+        height: 32px;
+        position: absolute;
+        left: 5px;
+        top: 8px;
+      }
+    }
+  }
+
+  .view-info {
+    text-align: left;
+
+    @media screen and (max-width: $md) {
+      padding: 0;
+      margin-top: 10px;
+      text-align: center;
+
+      .row {
+        width: 100%;
+      }
+    }
+
+    .view-name {
+      text-transform: uppercase;
+    }
+
+    .label {
+      font-weight: 700;
+      margin-right: 5px;
+      text-transform: uppercase;
+    }
+
+    .field-content{
+      display: inline;
+    }
+
+    .field {
+      border-bottom: 1px solid rgba(149,149,149,0.25);
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+  .info-area {
+    display: flex;
+    margin: auto;
+    max-width: 80%;
+    align-items: center;
+
+    @media screen and (max-width: $xs) {
+      margin: 0;
+      max-width: 100%;
+    }
+  }
+
+  .languages-listing {
+    span.label {
+      margin-right: 30px;
+    }
+
+    .dropdown {
+      display: inline-block;
+
+      button {
+        box-shadow: none;
+        border: none;
+        background: #fff;
+        color: #000;
+        padding: 0px 10px;
+        min-width: 200px;
+
+        &:active {
+          background: #fff;
+          color: #000;
+        }
+      }
+    }
+  }
+}
+
+// for badges area
+.badges-container {
+  width: 100%;
+
+  .view-badges {
+    h2 {
+      text-transform: uppercase;
+      font-size: 30px;
+    }
+
+    .badge-area {
+      justify-content: center;
+    }
+
+    .profile-badge {
+      cursor: pointer;
+    }
+
+    .view-badge {
+      border-radius: 50%;
+      position: relative;
+      width: 90px;
+      height: 90px;
+
+      @media screen and (max-width: $xs) {
+        width: 66px;
+        height: 66px;
+        background-size: 66px;
+      }
+    }
+  }
+}
+
+// For Badge modal.
+.badge-modal {
+  .view-badge-modal {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+
+  .modal-header {
+    border: none;
+    justify-content: space-around;
+    align-content: center;
+  }
+
+  .modal-title {
+    margin-top: -80px;
+    text-align: center;
+  }
+
+  button {
+    position: absolute;
+    right: -50px;
+    top: -50px;
+
+    @media screen and (max-width: $xs) {
+      right: 0px;
+      top: -50px;
+    }
+
+    span {
+      font-size: 4rem;
+      font-weight: 400;
+      line-height: 1;
+      color: $white;
+      text-shadow: 0 0px 0 $white;
+      opacity: 1;
+    }
+  }
+  .divider {
+      margin: 0 0 5% 37%;
+      width: 25%;
+      border: 0;
+      border-top: 1px solid $grey;
+  }
+  .badge-title {
+      font-size: 22px;
+      text-align: center;
+      text-transform: uppercase;
+  }
+  .modal-body {
+      text-align: center;
+  }
+}
+
+// for user edit profile
+.user-edit {
+  margin: 25px 0;
+}
+
+.form-control {
+  padding: 0.688rem 0.85rem;
+}
+
+.form-error {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: $dark-green;
+}
+
+.view-profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+// for points section
+.old-points {
+  margin-top: 20px;
+}
+
+.view-points {
+  margin-top: 90px;
+  text-align: center;
+  font-size: 22px;
+  border-bottom: 1px solid $grey;
+
+  .user-section {
+    margin-bottom: 50px;
+  }
+
+  .points {
+    font-weight: 500;
+    text-align: center;
+    color: $link-color;
+  }
+
+  .rank {
+    font-weight: 600;
+    text-align: center;
+    color: $black;
+  }
+
+  .user-points {
+    margin-top: 5px;
+
+    img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+    }
+  }
+
+  .others-points {
+    margin-top: 5px;
+
+    img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+    }
+  }
+}
+
+//For User Dashboard's Leaderboard
+.view-user-board {
+  margin-top: 50px;
+
+  & > h2 {
+    text-transform: uppercase;
+    font-size: 30px;
+  }
+
+  .user-leader-area {
+    @media screen and (max-width: $xs) {
+      max-width: 100%;
+    }
+  }
+}
+
+.width100{
+  width: 100%;
+}
