@@ -1,0 +1,17 @@
+name: ADF Frontend
+description: 'ADF Frontend Theme'
+type: theme
+core: 8.x
+package: Custom theme
+
+regions:
+  header: 'Header'
+  content: 'Content'
+  footer: 'Footer'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+
+libraries:
+  - 'elx_frontend/react-scripts'
+  - 'elx_frontend/custom-script'
+  - 'elx_frontend/global-styles'

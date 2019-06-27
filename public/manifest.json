@@ -1,0 +1,35 @@
+{
+  "short_name": "ADF",
+  "name": "ARAMIS AND DESIGNER FRAGRANCES",
+  "icons":[{
+    "src": "/themes/custom/elx_frontend/images/icons/aramis_128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }, {
+      "src": "/themes/custom/elx_frontend/images/icons/aramis_144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }, {
+      "src": "/themes/custom/elx_frontend/images/icons/aramis_152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    }, {
+      "src": "/themes/custom/elx_frontend/images/icons/aramis_192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }, {
+      "src": "/themes/custom/elx_frontend/images/icons/aramis_256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }, {
+      "src": "/themes/custom/elx_frontend/images/icons/aramis_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "scope": "/",
+  "prefer_related_applications": false
+}

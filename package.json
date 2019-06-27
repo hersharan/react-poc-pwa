@@ -1,0 +1,50 @@
+{
+  "name": "adf",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@babel/polyfill": "^7.4.3",
+    "acorn": "^6.1.1",
+    "axios": "^0.18.0",
+    "bootstrap": "^4.3.1",
+    "classnames": "^2.2.6",
+    "crypto-js": "^3.1.9-1",
+    "formik": "^1.5.3",
+    "fs": "0.0.1-security",
+    "node-sass": "^4.11.0",
+    "query-string": "^6.4.2",
+    "react": "^16.8.6",
+    "react-alice-carousel": "^1.14.0",
+    "react-content-loader": "^4.2.1",
+    "react-cookies": "^0.1.0",
+    "react-dom": "^16.8.6",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.8",
+    "reactstrap": "^7.1.0",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "workbox-sw": "^4.3.1",
+    "workbox-webpack-plugin": "^4.2.0"
+  },
+  "scripts": {
+    "start": "react-app-rewired start && node afterBuild.js",
+    "build": "react-app-rewired build && node afterBuild.js",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "react-app-rewired": "^2.1.1"
+  },
+  "homepage": "/themes/custom/elx_frontend/build/"
+}

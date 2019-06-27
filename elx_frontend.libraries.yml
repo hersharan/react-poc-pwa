@@ -1,0 +1,20 @@
+global-styles:
+  version: 1.x
+  css:
+    theme:
+      build/css/common.eb6683c9.css: {}
+      build/css/main.219ff1b6.css: {}
+
+custom-script:
+  js:
+    js/script.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+
+react-scripts:
+  js:
+    https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CIntersectionObserverEntry%2Cfetch%2CMutationObserver%2CHTMLPictureElement%2CObject.assign%2CObject.create%2CPromise: {type: external}
+    build/js/common.433a7cda.bundle.js: {attributes: {type: application/javascript}, preprocess: true}
+    build/js/main.40c90fb2.bundle.js: {attributes: {type: application/javascript}, preprocess: true}
