@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
-import { Redirect } from 'react-router-dom';
 
 import '../../../sass/components/header.scss';
-import MenuIcon from '../../../../images/icons/menu.svg';
+import MenuIcon from '../../../../src/images/menu.svg';
 import Logo from '../../../../src/images/Logo.svg';
 import { PrimaryNavigation } from '../PrimaryNavigation/PrimaryNavigation';
 import { isLoggedIn } from '../../helpers/authorization';

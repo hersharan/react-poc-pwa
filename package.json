@@ -29,10 +29,10 @@
     "workbox-webpack-plugin": "^4.2.0"
   },
   "scripts": {
-    "start": "react-app-rewired start && node afterBuild.js",
-    "build": "react-app-rewired build && node afterBuild.js",
-    "test": "react-app-rewired test",
-    "eject": "react-app-rewired eject"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,9 +42,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "react-app-rewired": "^2.1.1"
-  },
-  "homepage": "/themes/custom/elx_frontend/build/"
+  ]
 }

@@ -10,16 +10,6 @@ import '@babel/polyfill';
 import './sass/style.scss';
 
 
-let path = window.location.pathname;
-
-// Drupal Admin bar
-const adminBar = document.getElementById('toolbar-item-administration');
-if (adminBar) {
-  window.addEventListener('load', function() {
-    adminBar.click();
-  });
-}
-
 ReactDOM.render(
   <Provider store={store}>
     <App />
@@ -28,8 +18,4 @@ ReactDOM.render(
   document.getElementById('react-app-container')
 );
 
-if (path.indexOf('/admin') !== '-1' || path.indexOf('/node') !== '-1' || path.indexOf('/user/reset') !== '-1') {
-  serviceWorker.unregister();
-}
-
-// serviceWorker.register();
+serviceWorker.register();
