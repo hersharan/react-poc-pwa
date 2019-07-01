@@ -28,7 +28,7 @@ const ResetPassword = lazy(() => import(/* webpackChunkName: "ResetPassword" */ 
 
 const ChangePassword = lazy(() => import(/* webpackChunkName: "ChangePassword" */ './ChangePassword/index'));
 
-const NotFoundPage = lazy(() => import(/* webpackChunkName: "NotFoundPage" */ './Errors/NotFoundPage'));
+// const NotFoundPage = lazy(() => import(/* webpackChunkName: "NotFoundPage" */ './Errors/NotFoundPage'));
 
 const ModuleListing = lazy(() => import(/* webpackChunkName: "ModuleListing" */ './ModuleListing/ModuleListing'));
 

@@ -11,13 +11,20 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
+importScripts("/workbox-v4.3.0/workbox-sw.js");
+workbox.setConfig({modulePathPrefix: "/workbox-v4.3.0"});
 
 importScripts(
-  "/precache-manifest.7c1b61b341a2fcf51f66a9e45f802311.js"
+  "/precache-manifest.f775f3f69f1aa4516236f0b241a8997e.js"
 );
 
-workbox.clientsClaim();
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
+
+workbox.core.clientsClaim();
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
@@ -25,10 +32,11 @@ workbox.clientsClaim();
  * See https://goo.gl/S9QRab
  */
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
-workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/index.html", {
-  
+workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/build/index.html"), {
+  whitelist: [/\//,/\/home/,/\/login.*$/,/\/logout.*$/,/\/news.*$/,/\/reset-password.*$/,/\/confirm-password.*$/,/\/course.*$/,/\/brand.*$/,/\/module.*$/,/\/product.*$/,/\/products.*$/,/\/privacy-policy.*$/,/\/terms-and-conditions.*$/],
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
+
+workbox.routing.registerRoute(/.(?:png|jpg|jpeg|svg|gif|css|js|mp4)/, new workbox.strategies.NetworkFirst({ "cacheName":"app-cache", plugins: [new workbox.expiration.Plugin({ maxEntries: 50, maxAgeSeconds: 31536000, purgeOnQuotaError: false }), new workbox.backgroundSync.Plugin("app", { maxRetentionTime: 3600 }), new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] })] }), 'GET');
