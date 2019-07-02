@@ -8,8 +8,8 @@ import primaryNavigation from "./primaryNavigation.actions";
 import "../../../sass/components/primary-navigation.scss";
 import HeadingLoader from "../Loaders/HeadingLoader";
 import { LOGOUT } from "../../helpers/translations";
-import UpArrow from '../../../images/up_arrow.svg';
-import DownArrow from '../../../images/down_arrow.svg';
+import UpArrow from '../../../../public/images/up_arrow.svg';
+import DownArrow from '../../../../public/images/down_arrow.svg';
 
 class PrimaryNavigation extends Component {
   constructor() {

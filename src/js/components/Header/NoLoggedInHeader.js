@@ -1,7 +1,7 @@
 import React from 'react';
 
 import '../../../sass/components/header.scss';
-import Logo from '../../../../src/images/Logo.svg';
+import Logo from '../../../../public/images/Logo.svg';
 
 
 function NoLoggedInHeader() {

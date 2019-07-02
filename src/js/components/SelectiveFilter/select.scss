@@ -15,7 +15,7 @@
 
       .btn {
         &:after {
-          background: url('../../../images/up_arrow.svg') no-repeat center center;
+          background: url('../../../../public/images/up_arrow.svg') no-repeat center center;
         }
       }
     }
@@ -38,7 +38,7 @@
       right: 5px;
       width: 15px;
       height: 25px;
-      background: url('../../../images/down_arrow.svg') no-repeat center center;
+      background: url('../../../../public/images/down_arrow.svg') no-repeat center center;
       background-size: contain;
     }
   }

@@ -1,12 +1,9 @@
 import React, { Suspense, lazy, Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import axios from 'axios';
 
 import { LOADER } from '../helpers/appConstants';
 import { isLoggedIn } from '../helpers/authorization';
 import ProviderComponent from './GlobalBrands';
-
-axios.defaults.baseURL = 'http://ec2-18-136-101-163.ap-southeast-1.compute.amazonaws.com:5000';
 
 const Loader = <section className="loading"><img className="loading-icon" src={LOADER} alt="loader" /></section>;
 
@@ -28,7 +25,7 @@ const ResetPassword = lazy(() => import(/* webpackChunkName: "ResetPassword" */ 
 
 const ChangePassword = lazy(() => import(/* webpackChunkName: "ChangePassword" */ './ChangePassword/index'));
 
-// const NotFoundPage = lazy(() => import(/* webpackChunkName: "NotFoundPage" */ './Errors/NotFoundPage'));
+const NotFoundPage = lazy(() => import(/* webpackChunkName: "NotFoundPage" */ './Errors/NotFoundPage'));
 
 const ModuleListing = lazy(() => import(/* webpackChunkName: "ModuleListing" */ './ModuleListing/ModuleListing'));
 
@@ -84,7 +81,7 @@ class App extends Component {
                 <PrivateRoute exact path="/videos" component={Videos} />
                 <Route path="/privacy-policy" component={PrivacyPolicy} />
                 <Route path="/terms-and-conditions" component={TermsAndConditions} />
-                {/* <Route component={NotFoundPage} /> */}
+                <Route component={NotFoundPage} />
               </Switch>
             </ProviderComponent>
           </div>

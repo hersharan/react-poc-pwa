@@ -10,7 +10,7 @@ import proptypes from 'prop-types';
 import LazyImages from './LazyImages';
 import { BANNER_DEFAULT } from '../../helpers/appConstants';
 import "react-alice-carousel/lib/scss/alice-carousel.scss";
-import VideoIcon from '../../../images/defaults/video-play-icon.png';
+import VideoIcon from '../../../../public/images/defaults/video-play-icon.png';
 import '../../../sass/components/videos.scss';
 
 class ELCarousel extends Component {

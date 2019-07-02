@@ -25,29 +25,13 @@ module.exports = {
         clientsClaim: true,
         exclude: [/\.map$/, /asset-manifest\.json$/],
         importWorkboxFrom: 'local',
-        navigateFallback: '/build/index.html',
+        navigateFallback: '/index.html',
         navigateFallbackBlacklist: [
           // Exclude URLs starting with /_, as they're likely an API call
           new RegExp('^/_'),
           // Exclude URLs containing a dot, as they're likely a resource in
           // public/ and not a SPA route
           new RegExp('/[^/]+\\.[^/]+$'),
-        ],
-        navigateFallbackWhitelist: [
-          new RegExp('/'),
-          new RegExp('/home'),
-          new RegExp('/login.*$'),
-          new RegExp('/logout.*$'),
-          new RegExp('/news.*$'),
-          new RegExp('/reset-password.*$'),
-          new RegExp('/confirm-password.*$'),
-          new RegExp('/course.*$'),
-          new RegExp('/brand.*$'),
-          new RegExp('/module.*$'),
-          new RegExp('/product.*$'),
-          new RegExp('/products.*$'),
-          new RegExp('/privacy-policy.*$'),
-          new RegExp('/terms-and-conditions.*$'),
         ],
         runtimeCaching: [{
           urlPattern: new RegExp('.(?:png|jpg|jpeg|svg|gif|css|js|mp4)'),

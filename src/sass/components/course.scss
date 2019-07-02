@@ -18,7 +18,7 @@
       height: 30px;
       border-radius: 50%;
       z-index: 1;
-      background: url('../../images/mark.jpg') no-repeat center center;
+      background: url('../../../public/images/mark.jpg') no-repeat center center;
       background-size: cover;
     }
 
@@ -37,7 +37,7 @@
 
 .sub-heading {
   &:before {
-    background: url('../../images/left_arrow.svg') no-repeat center center;
+    background: url('../../../public/images/left_arrow.svg') no-repeat center center;
   }
 }
 
