@@ -45,7 +45,7 @@ class FooterRender extends Component {
 
   renderFooter() {
     const { fetchedFooter, footer } = this.props;
-    if (fetchedFooter && footer.length !== 0 && footer.privacyMenu.length !== 0) {
+    if (fetchedFooter && footer.length !== 0 && footer.privacyMenu && footer.privacyMenu.length !== 0) {
       return (
         <div className="footer">
           {this.getMenuitems()}

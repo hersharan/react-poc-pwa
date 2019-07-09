@@ -27,7 +27,8 @@ class ChangePassword extends Component {
       })
     }
     if (nextProps.fetchedChangePassword && nextProps.changePassword && nextProps.changePassword.message && nextProps.changePassword.message !== '') {
-      document.location = '/login';
+      // document.location = '/login';
+      nextProps.props.history.push('/login');
     }
   }
 
