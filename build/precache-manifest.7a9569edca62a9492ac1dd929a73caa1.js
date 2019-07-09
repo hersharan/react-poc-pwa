@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/js/ProductDetail.2ac12f54.bundle.js"
   },
   {
-    "revision": "5a230604a68aa3c813d28cbf90f81c75",
+    "revision": "ade3c4fedca960d5fa7cb03f9d4c7db7",
     "url": "/index.html"
   },
   {
@@ -16,20 +16,20 @@ self.__precacheManifest = [
     "url": "/js/BrandLanding.1ff4f601.bundle.js"
   },
   {
-    "revision": "36509b0a315e3fb47e08",
-    "url": "/js/main.fcbb2a17.bundle.js"
+    "revision": "b71fbcd1c857f34df2ce",
+    "url": "/js/main.e05b57b1.bundle.js"
   },
   {
-    "revision": "254d69a4c857d1f62ff4",
-    "url": "/js/ChangePassword.6b135f8f.bundle.js"
+    "revision": "e7738e7410f21bbdf886",
+    "url": "/js/ChangePassword.3da1788b.bundle.js"
   },
   {
     "revision": "699db98d422d6e80f0a4",
     "url": "/js/Videos.eaf1dc8f.bundle.js"
   },
   {
-    "revision": "e07b213bcd52279fbe51",
-    "url": "/js/Footer.07e3e33f.bundle.js"
+    "revision": "109af742c426d9caf27c",
+    "url": "/js/Footer.09ad9398.bundle.js"
   },
   {
     "revision": "973d08bd8e65f5d497cb",
@@ -124,7 +124,7 @@ self.__precacheManifest = [
     "url": "/images/avatar.3c59c3c7.svg"
   },
   {
-    "revision": "36509b0a315e3fb47e08",
+    "revision": "b71fbcd1c857f34df2ce",
     "url": "/css/main.d330b8da.css"
   },
   {
@@ -176,11 +176,11 @@ self.__precacheManifest = [
     "url": "/css/Header.803068f5.css"
   },
   {
-    "revision": "e07b213bcd52279fbe51",
+    "revision": "109af742c426d9caf27c",
     "url": "/css/Footer.8021181f.css"
   },
   {
-    "revision": "254d69a4c857d1f62ff4",
+    "revision": "e7738e7410f21bbdf886",
     "url": "/css/ChangePassword.5129f6c5.css"
   },
   {

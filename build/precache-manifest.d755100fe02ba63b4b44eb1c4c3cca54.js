@@ -4,11 +4,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/BrandLanding.7d38e857.css"
   },
   {
-    "revision": "254d69a4c857d1f62ff4",
+    "revision": "e7738e7410f21bbdf886",
     "url": "/css/ChangePassword.5129f6c5.css"
   },
   {
-    "revision": "e07b213bcd52279fbe51",
+    "revision": "109af742c426d9caf27c",
     "url": "/css/Footer.8021181f.css"
   },
   {
@@ -68,7 +68,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/common.8dbdc4e9.css"
   },
   {
-    "revision": "36509b0a315e3fb47e08",
+    "revision": "b71fbcd1c857f34df2ce",
     "url": "/css/main.d330b8da.css"
   },
   {
@@ -96,7 +96,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/images/up_arrow.d03601d9.svg"
   },
   {
-    "revision": "5a230604a68aa3c813d28cbf90f81c75",
+    "revision": "ade3c4fedca960d5fa7cb03f9d4c7db7",
     "url": "/index.html"
   },
   {
@@ -104,12 +104,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/BrandLanding.1ff4f601.bundle.js"
   },
   {
-    "revision": "254d69a4c857d1f62ff4",
-    "url": "/js/ChangePassword.6b135f8f.bundle.js"
+    "revision": "e7738e7410f21bbdf886",
+    "url": "/js/ChangePassword.3da1788b.bundle.js"
   },
   {
-    "revision": "e07b213bcd52279fbe51",
-    "url": "/js/Footer.07e3e33f.bundle.js"
+    "revision": "109af742c426d9caf27c",
+    "url": "/js/Footer.09ad9398.bundle.js"
   },
   {
     "revision": "61713d82f327e8ffb0a2",
@@ -180,14 +180,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/common.9f33b99e.bundle.js"
   },
   {
-    "revision": "36509b0a315e3fb47e08",
-    "url": "/js/main.fcbb2a17.bundle.js"
+    "revision": "b71fbcd1c857f34df2ce",
+    "url": "/js/main.e05b57b1.bundle.js"
   },
   {
-    "url": "/precache-manifest.c86070c125558d5e0c4e4608822abb50.js"
+    "url": "/precache-manifest.7a9569edca62a9492ac1dd929a73caa1.js"
   },
   {
-    "revision": "e0879507ce9f94aaa9e43864ff59330e",
+    "revision": "58306a93853887cf5fde9b7cb80f68b7",
     "url": "/service-worker.js"
   },
   {
