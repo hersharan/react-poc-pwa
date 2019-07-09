@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.srijanelc.adf",
+    "sha256_cert_fingerprints":
+    ["71:AD:DF:90:D1:C4:24:5C:C2:94:2B:25:AF:56:49:42:BE:91:5F:5C:B8:B6:2C:D7:8C:27:77:99:5B:D3:56:A3"]
+  }
+}]
