@@ -1,6 +1,7 @@
 import {
     ADD_ERROR,
     REMOVE_ERROR,
+    ADD_ERROR_WITHOUT_LOGOUT
   } from '../../helpers/actionConstants';
 
   export default function errors(state = {
@@ -23,6 +24,15 @@ import {
           caughtError: false,
           error: null,
           errorMessage: '',
+        };
+      }
+      case ADD_ERROR_WITHOUT_LOGOUT: {
+        return {
+          ...state,
+          caughtError: true,
+          logoutBtn: false,
+          error: action.payload.response.status,
+          errorMessage: action.payload.response.data.message ? action.payload.response.data.message : action.payload.response.data
         };
       }
       default:

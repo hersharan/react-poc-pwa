@@ -9,6 +9,7 @@
   margin: auto;
   position: relative;
   z-index: 3;
+  flex-direction: column;
 
   form {
     display: flex;
@@ -108,6 +109,11 @@
     align-items: center;
     justify-content: center;
   }
+
+  .msg {
+    margin-bottom: 15px;
+    padding: 15px;
+  }
 }
 
 .modal-header {
@@ -131,6 +137,7 @@ body {
   background-position: center center;
   height: 100vh;
   width: 100%;
+  background-attachment: fixed;
 
   &:before {
     content: '';
@@ -165,4 +172,90 @@ body {
 
 body {
   padding-top: 0 !important;
+}
+
+.registration-form {
+  background-color: rgba(255,255,255,0.8);
+  max-width: none;
+
+  .page-title {
+    width: 100%;
+    text-align: left;
+  }
+
+  .registration-wrapper {
+    overflow: auto;
+    margin-bottom: 50px;
+    height: calc(100vh - 120px);
+    width: 100%;
+  }
+
+  form {
+    max-width: $sm;
+    margin: auto;
+
+    input {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+
+
+  .dropdown {
+    width: 100%;
+
+    .btn {
+      width: 100%;
+      border-color: #000;
+      text-align: left;
+    }
+
+    .dropdown-item {
+      text-align: left;
+    }
+
+    .dropdown-header {
+      text-align: left;
+      padding: 8px 5px;
+      margin: 0;
+    }
+  }
+
+  .loader {
+    padding: 6px 0;
+    border: 1px solid #000;
+    margin-bottom: 15px;
+
+    .inline-loading {
+      line-height: 16px;
+      font-size: 16px;
+    }
+  }
+
+  .need-help {
+    margin: 50px 0;
+
+    .loader {
+      border: none;
+    }
+  }
+
+  .select-filter {
+    padding: 0;
+    margin-bottom: 15px;
+
+    .btn {
+      padding: 7px;
+
+      &:after {
+        height: 32px;
+      }
+    }
+  }
+
+  .captcha {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+  }
 }

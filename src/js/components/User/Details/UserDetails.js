@@ -3,6 +3,7 @@ import {Col, Row} from 'reactstrap';
 
 import {MARKET_LABEL, JOB_TITLE_LABEL} from '../../../helpers/translations';
 import NotFoundPage from '../../Errors/NotFoundPage';
+import Avatar from '../../../../images/defaults/avatar.png';
 import '../../../../sass/components/userprofile.scss';
 
 const UserProfile = (props) => {
@@ -14,7 +15,7 @@ const UserProfile = (props) => {
       <Row>
         <Col xs={12} className="user-picture">
           <div className="profile-image">
-            <img src={user.userPicture} alt='' />
+            <img src={user.userPicture ? user.userPicture : Avatar} alt='user-profile' />
           </div>
         </Col>
         <Col xs={12} className="user-data">
@@ -44,7 +45,6 @@ const UserProfile = (props) => {
               <div className="field-content">
                 {user.markets.map((itm) => itm.name).join(', ')}
               </div>
-              {user.name}
             </div>
           }
         </Col>

@@ -12,7 +12,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { filterData } from '../../helpers/utils';
-import classnames from 'classnames';
 import { Link } from 'react-router-dom';
 
 import getInteractiveContentActions from './moduleDetails.actions';
@@ -33,8 +32,6 @@ class ModuleDetails extends Component {
 
     this.getStatementId = this.getStatementId.bind(this);
     this.goBack = this.goBack.bind(this);
-    this.iframStatus = this.iframStatus.bind(this);
-    this.errorMsg = this.errorMsg.bind(this);
     this.getInterectiveContent = this.getInterectiveContent.bind(this);
   }
 
@@ -69,25 +66,6 @@ class ModuleDetails extends Component {
     this.props.history.goBack();
   }
 
-  errorMsg() {
-    return Error('iframe');
-  }
-
-  iframStatus() {
-    if (this.props.fetchedInteractiveContent && this.props.interactiveContent.articulateFile) {
-      let url = this.props.interactiveContent.articulateFile;
-      var $this = this;
-      fetch(url)
-      .then(function(response) {
-        if (response.status === 404) {
-          $this.setState({
-            iframe: 404
-          });
-        }
-      })
-    }
-  }
-
   getStatementId() {
     const iframeStyle = {
       width: '100%',
@@ -97,8 +75,7 @@ class ModuleDetails extends Component {
     const { interactiveContent } = this.props;
     return (
       <div className="interective-iframe main-content pt-0">
-        <iframe title={interactiveContent.displayTitle} src={interactiveContent.articulateFile} style={iframeStyle} className={classnames({"d-none": this.state.iframe})} frameBorder="0" id="interective-iframe" onLoad={this.iframStatus}></iframe>
-        <div className={classnames("iframe-status", {"d-none": !this.state.iframe})}>{this.state.iframe && this.errorMsg()}</div>
+        <iframe title={interactiveContent.displayTitle} src={interactiveContent.articulateFile} style={iframeStyle} frameBorder="0" id="interective-iframe" onLoad={this.iframStatus}></iframe>
       </div>
     )
   }

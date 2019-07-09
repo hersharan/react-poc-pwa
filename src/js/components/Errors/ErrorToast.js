@@ -2,6 +2,7 @@
 import React from 'react';
 import { Alert } from 'reactstrap';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { DEFAULT_ERROR_MESSAGE } from '../../helpers/translations';
 
 
@@ -27,12 +28,15 @@ class ErrorToast extends React.Component {
   }
 
   render() {
-    const { errorMessage, caughtError } = this.props;
+    const { errorMessage, caughtError, logoutBtn } = this.props;
     if (caughtError) {
       return (
         <>
           <Alert color="dark" isOpen={this.state.visible} toggle={this.onDismiss}>
-            {errorMessage ? errorMessage : DEFAULT_ERROR_MESSAGE} <a href="/logout">Click Here</a>
+            {errorMessage ? errorMessage : DEFAULT_ERROR_MESSAGE}
+            {logoutBtn &&
+              <a href="/logout">Click Here</a>
+            }
           </Alert>
         </>
       )
@@ -41,6 +45,14 @@ class ErrorToast extends React.Component {
     }
   }
 }
+
+ErrorToast.propTypes = {
+  logoutBtn: PropTypes.bool,
+}
+
+ErrorToast.defaultProps = {
+  logoutBtn: true
+};
 
 
 const mapDispatchToProps = (dispatch) => {
@@ -51,9 +63,9 @@ const mapDispatchToProps = (dispatch) => {
 
 
 function mapStateToProps(state) {
-  const { errorMessage, error, caughtError } = state.errors;
+  const { errorMessage, error, caughtError, logoutBtn } = state.errors;
 
-  return { errorMessage, error, caughtError }
+  return { errorMessage, error, caughtError, logoutBtn }
 }
 
 const Error = connect(mapStateToProps, mapDispatchToProps)(ErrorToast);

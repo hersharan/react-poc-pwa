@@ -51,7 +51,7 @@ class ModuleListing extends Component {
 
     if (fetchedModuleListing) {
       return (
-        <div className="course mt-3 col-12">
+        <div className="course mt-3">
           {moduleListing.levelDetail &&
             <>
               {moduleListing.levelDetail.brandId !== 0 &&

@@ -52,7 +52,7 @@ function ServiceFailure() {
     <div className="error service-failure flex-column">
       <div className="service-failure-content col-12">
         <figure className="text-center">
-          <img src="/images/defaults/serviceFailure.svg" alt="service-failure" />
+          <img src="/themes/custom/elx_frontend/images/defaults/serviceFailure.svg" alt="service-failure" />
           <figcaption>Unfortunately the service failed.</figcaption>
         </figure>
         <button onClick={refresh} className="bb-btn-black col-5 m-auto">Try Again</button>
@@ -66,7 +66,9 @@ function iFrameError() {
     <div className="error">
       <div className="unauthorize">
         <div className="my-5 col-12">File does not exist</div>
-        <button onClick={refresh} className="bb-btn-black col-5 m-auto">Refresh</button>
+        <div className="more-link">
+          <button onClick={refresh} className="btn btn-outline-secondary text-uppercase active">Refresh</button>
+        </div>
       </div>
     </div>
   )
@@ -82,7 +84,7 @@ export function ProductCardsError(category) {
   return (
     <div className="error">
       <figure className="text-center">
-        <img src="/images/defaults/productcards.svg" alt="products-cards error" className="my-4" />
+        <img src="/themes/custom/elx_frontend/images/defaults/productcards.svg" alt="products-cards error" className="my-4" />
         <figcaption className="my-4">{`Products under the section ${category} will appear here.`}</figcaption>
       </figure>
     </div>

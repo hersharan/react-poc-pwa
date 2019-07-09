@@ -4,11 +4,16 @@ import PropTypes from 'prop-types';
 
 import '../../../sass/modules/_modal.scss';
 import { inlineLoading } from '../../helpers/utils';
-import {BANNER_DEFAULT} from '../../helpers/appConstants';
+import { BANNER_DEFAULT, TEMPLATE_DEFAULT } from '../../helpers/appConstants';
+import LazyImages from '../Common/LazyImages';
+import {TOOLS_VIEW_LABEL} from '../../helpers/translations';
 
 class Popup extends React.Component {
+  createMarkup(data) {
+    return { __html: data };
+  }
   render() {
-    const {toggle, modal, fetching, type, data, fetched} = this.props;
+    const { toggle, modal, fetching, type, data, fetched } = this.props;
 
     return (
       <>
@@ -23,16 +28,25 @@ class Popup extends React.Component {
                 {fetching ? <div className="loader text-center">{inlineLoading()}</div> : null}
                 {fetched &&
                   <video width="640" height="360" controls poster={data && data.videoThumbnail ? data.videoThumbnail : BANNER_DEFAULT} autoPlay controlsList="nodownload">
-                  <source src={data && data.videoUrl} type="video/mp4" />
-                  {data && data.videoSubtitle && <track src={data && data.videoSubtitle} default></track>}
+                    <source src={data && data.videoUrl} type="video/mp4" />
+                    {data && data.videoSubtitle && <track src={data && data.videoSubtitle} default></track>}
                     Your browser does not support the video tag.
                   </video>
                 }
               </div>
             }
-            {type === 'pdf' &&
+            {type === 'tools' &&
               <div className="popup-wrapper pdf">
-                pdf
+                {fetching ? <div className="loader text-center">{inlineLoading()}</div> : null}
+                {fetched && <>
+                  <LazyImages defaultImage={TEMPLATE_DEFAULT} src={data.imageSmall} />
+                  <div className="description" dangerouslySetInnerHTML={this.createMarkup(data.description)}>
+                  </div>
+                  <div className="col more-link">
+                    <a className="btn btn-outline-secondary text-uppercase active" href={data.url} target="_blank" rel="noopener noreferrer">{TOOLS_VIEW_LABEL}</a>
+                  </div>
+                  </>
+                }
               </div>
             }
           </ModalBody>

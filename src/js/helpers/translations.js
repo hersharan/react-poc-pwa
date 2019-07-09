@@ -23,6 +23,9 @@ export const KEYNOTES_LABEL = 'Key Notes';
 // Videos
 export const VIDEO_LISTING_TITLE = 'Videos';
 
+// Tools
+export const TOOLS_LISTING_TITLE = "PDF's";
+
 // NEWS
 export const STORIES_TITLE = 'News';
 
@@ -41,6 +44,7 @@ export const RESET_LABEL = 'Reset Password';
 export const HAVE_RESET_CODE = 'Have a Reset Code?';
 export const BACK_TO_LOGIN = '<Back To Login';
 export const LOGIN = 'Login';
+export const REGISTRATION_SUCCESS = 'Further Instruction Has Been Sent To Your Email Id.';
 
 // Footer Labels
 export const LOGOUT = 'Logout';
@@ -64,3 +68,37 @@ export const INGREDIENT_FEATURED_LABEL = 'Featured In';
 // User Details
 export const MARKET_LABEL = 'Markets:';
 export const JOB_TITLE_LABEL = 'Job Title:';
+
+export const TOOLS_VIEW_LABEL = 'View PDF';
+
+// Registration Form
+export const REGISTER = 'REGISTER';
+export const NEW_USER_LABEL = 'New User?';
+export const NAME = 'Name';
+export const FIRST_NAME = 'First Name';
+export const LAST_NAME = 'Last Name';
+export const EMAIL = 'Email';
+export const USERNAME = 'Username';
+export const PASSWORD = 'Password';
+export const CONFIRM_PASSWORD = 'Confirm Password';
+export const LOCATION = 'Location';
+export const SELECT_REGION = 'Select Region';
+export const SELECT_MARKET = 'Select Market';
+export const LANGUAGE = 'Language';
+export const SELECT_LANGUAGE = 'Select Language';
+export const JOB_TITLE = 'Job Title';
+export const SELECT_JOB_TITLE = 'Select Job Title';
+export const REGISTRATION_CODE = 'Registration Code';
+export const REQUIRED = 'Required';
+export const PASSWORD_DOES_NOT_MATCH = 'Password does not match';
+export const INVALID_EMAIL = 'Invalid Email';
+export const INVALID_USERNAME = 'Invalid Username';
+export const REGISTRATION_LABEL = 'Create Your e-Learning Account';
+export const SELECT_RETAILER = 'Select Retailer';
+export const NO_RETAILERS = 'No Retailers';
+export const SELECT_STORE = 'Select Store';
+export const SELECT_BRAND = 'Select Brand';
+export const NO_STORES = 'No Stores';
+export const NO_LANGUAGE = 'No Languages';
+export const NO_JOBS_TITLE = 'No Job Titles';
+export const CANCEL = 'Cancel';

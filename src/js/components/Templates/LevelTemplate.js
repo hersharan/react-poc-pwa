@@ -10,7 +10,6 @@
  */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
 import {
   Card,
   CardTitle,
@@ -63,20 +62,23 @@ class LevelTemplate extends Component {
         return (
           <div key={idx} className='list-item'>
             <Card className='listing-block'>
-              <CardLink href={`${link}${item.categoryId || item.nid}`} className={classnames({'completed': item.status})}>
-                <LazyImages
-                  defaultImage={BANNER_DEFAULT}
-                  src={item.imageSmall ? item.imageSmall : BANNER_DEFAULT}
-                  imageLarge={item.imageLarge ? item.imageLarge : BANNER_DEFAULT}
-                  imageMedium={item.imageMedium ? item.imageMedium : BANNER_DEFAULT}
-                  type={'banner'}
-                />
-              </CardLink>
-              {item.displayTitle &&
-                <CardTitle tag='h2'>
-                  <CardLink href={`${link}${item.categoryId || item.nid}`} dangerouslySetInnerHTML={this.createMarkup(item.displayTitle)} />
-                </CardTitle>
-              }
+              <div className="listing-wrapper">
+                <CardLink href={`${link}${item.categoryId || item.nid}`} >
+                  <LazyImages
+                    defaultImage={BANNER_DEFAULT}
+                    src={item.imageSmall ? item.imageSmall : BANNER_DEFAULT}
+                    imageLarge={item.imageLarge ? item.imageLarge : BANNER_DEFAULT}
+                    imageMedium={item.imageMedium ? item.imageMedium : BANNER_DEFAULT}
+                    type={'banner'}
+                    completed={item.status}
+                  />
+                </CardLink>
+                {item.displayTitle &&
+                  <CardTitle tag='h2'>
+                    <CardLink href={`${link}${item.categoryId || item.nid}`} dangerouslySetInnerHTML={this.createMarkup(item.displayTitle)} />
+                  </CardTitle>
+                }
+              </div>
               {showBrandTitle &&
                 (item.brand !== 0 && (
                   <CardSubtitle tag="h3" className="brand-title">

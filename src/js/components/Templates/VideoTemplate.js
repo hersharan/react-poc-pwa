@@ -7,7 +7,7 @@ import {
   CardTitle,
   CardSubtitle
 } from 'reactstrap';
-import VideoIcon from '../../../../public/images/defaults/video-play-icon.png';
+import VideoIcon from '../../../images/defaults/video-play-icon.png';
 import { GlobalBrandsConsumer, GlobalBrands } from '../GlobalBrands';
 import VideoPopup from './Popup';
 

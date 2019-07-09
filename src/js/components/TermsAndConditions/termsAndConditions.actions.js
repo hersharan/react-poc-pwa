@@ -1,17 +1,14 @@
 import axios from 'axios';
 import { getAuthorization } from '../../helpers/authorization';
-// Enable when global terms and privacy are required
-// import { isLoggedIn } from '../../helpers/authorization';
+
+import { isLoggedIn } from '../../helpers/authorization';
 
 const config = getAuthorization();
 
 function getTermsAndConditions(language, country) {
-  /*
-  // Enable when global terms and privacy are required
-  // const loggedIn = isLoggedIn()
-  // let url = loggedIn ? `/api/v1/termsAndConditions` : `/api/v1/globalTermsAndCondition`;
-  */
- let url = `/api/v1/termsAndConditions`;
+  const loggedIn = isLoggedIn()
+  let url = loggedIn ? `/api/v1/termsAndConditions` : `/api/v1/globalTermsAndCondition`;
+
   return ((dispatch) => {
     dispatch({ type: 'FETCH_TERMS_CONDITIONS' });
     axios.get(`${url}?_format=json`, config)

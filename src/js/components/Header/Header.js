@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 
 import '../../../sass/components/header.scss';
-import MenuIcon from '../../../../public/images/menu.svg';
-import Logo from '../../../../public/images/Logo.svg';
+import MenuIcon from '../../../../images/icons/menu.svg';
+import Logo from '../../../../src/images/Logo.svg';
 import { PrimaryNavigation } from '../PrimaryNavigation/PrimaryNavigation';
 import { isLoggedIn } from '../../helpers/authorization';
 import NoLoggedInHeader from './NoLoggedInHeader';
@@ -14,7 +14,7 @@ const menuIcon = {
 function Header(props) {
   const [menu, useMenu] = useState(false);
 
-  if (window.location.pathname === '/login' || window.location.pathname === '/reset-password' || window.location.pathname === '/confirm-password') {
+  if (window.location.pathname === '/login' || window.location.pathname === '/reset-password' || window.location.pathname === '/confirm-password' || window.location.pathname === '/registration') {
     return null;
   }
 
@@ -29,8 +29,11 @@ function Header(props) {
     let username;
     let uid;
     if (localStorage.getItem('user')) {
-      username = JSON.parse(localStorage.getItem('user')).firstName;
       uid = JSON.parse(localStorage.getItem('user')).uid;
+      const name = JSON.parse(localStorage.getItem('user')).firstName;
+      if (name && window.location.pathname === '/home') {
+        username = name;
+      }
     }
     return (
       <>
@@ -40,7 +43,7 @@ function Header(props) {
               <img src={Logo} alt="Aramis and Designer Fragrances" />
             </a>
           </div>
-          {uid &&
+          {uid !==  0 &&
             <div className="user-icon" onClick={handleUserProfile}></div>
           }
           {username &&

@@ -2,11 +2,13 @@
   padding: 15px 0;
 
   .listing-block {
-    position: relative;
+    .listing-wrapper {
+      position: relative;
+    }
 
     .card-title {
       position: absolute;
-      bottom: 34px;
+      bottom: 0;
       text-align: center;
       left: 0;
       right: 0;
@@ -31,7 +33,7 @@
         right: -25px;
         width: 20px;
         height: 20px;
-        background: url('../../../public/images/down_arrow.svg') no-repeat center center;
+        background: url('../../images/down_arrow.svg') no-repeat center center;
         transform: rotate(-90deg);
       }
     }

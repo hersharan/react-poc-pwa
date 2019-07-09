@@ -1,19 +1,16 @@
 import axios from 'axios';
 import { getAuthorization } from '../../helpers/authorization';
-// Enable when global terms and privacy are required
-// import { isLoggedIn } from '../../helpers/authorization';
+
+import { isLoggedIn } from '../../helpers/authorization';
 
 const config = getAuthorization();
 
 function getPrivacyPolicy(language, country) {
 
   return ((dispatch) => {
-    /*
-    // Enable when global terms and privacy are required
-    // const loggedIn = isLoggedIn()
-    // let url = loggedIn ? `/api/v1/privacyPolicy` : `/api/v1/globalPrivacyPolicy`;
-    */
-    let url = `/api/v1/privacyPolicy`;
+    const loggedIn = isLoggedIn();
+    let url = loggedIn ? `/api/v1/privacyPolicy` : `/api/v1/globalPrivacyPolicy`;
+
     dispatch({ type: 'FETCH_PRIVACY_POLICY' });
     axios.get(`${url}?_format=json`, config)
       .then((response) => {

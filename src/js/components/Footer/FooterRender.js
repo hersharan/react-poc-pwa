@@ -9,6 +9,7 @@ import HeadingLoader from '../Loaders/HeadingLoader';
 import '../../../sass/components/footer.scss';
 import { COPYRIGHT, LOGOUT, NEED_HELP_FOOTER } from '../../helpers/translations';
 import supportActions from '../SupportEmail/support.actions';
+import { isLoggedIn } from '../../helpers/authorization';
 
 class FooterRender extends Component {
   constructor() {
@@ -26,8 +27,10 @@ class FooterRender extends Component {
   }
 
   componentDidMount() {
+    const loggedIn = isLoggedIn();
+    loggedIn ? this.props.getUserSupportEmail() : this.props.getGlobalSupportEmail();
+
     this.props.getFooter();
-    this.props.getUserSupportEmail();
     this.handleOrientation();
     this.setState({
       token: cookies.load('access_token')
@@ -45,7 +48,7 @@ class FooterRender extends Component {
 
   renderFooter() {
     const { fetchedFooter, footer } = this.props;
-    if (fetchedFooter && footer.length !== 0 && footer.privacyMenu && footer.privacyMenu.length !== 0) {
+    if (fetchedFooter && footer.length !== 0 && footer.privacyMenu.length !== 0) {
       return (
         <div className="footer">
           {this.getMenuitems()}

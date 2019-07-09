@@ -1,7 +1,7 @@
 import React, { Suspense, lazy, Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
-import { LOADER } from '../helpers/appConstants';
+import { LOADER, HOMEPAGE } from '../helpers/appConstants';
 import { isLoggedIn } from '../helpers/authorization';
 import ProviderComponent from './GlobalBrands';
 
@@ -10,6 +10,8 @@ const Loader = <section className="loading"><img className="loading-icon" src={L
 const UserLogin = lazy(() => import(/* webpackChunkName: "UserLogin" */ './UserLogin/UserLogin'));
 
 const UserLogout = lazy(() => import(/* webpackChunkName: "UserLogout" */ './UserLogout/UserLogout'));
+
+const UserRegistration = lazy(() => import(/* webpackChunkName: "UserRegistration" */ './UserRegistration'));
 
 const Homepage = lazy(() => import(/* webpackChunkName: "Homepage" */ './Homepage/Homepage'));
 
@@ -49,6 +51,7 @@ const Videos = lazy(() => import(/* webpackChunkName: "Videos" */ './Videos/Vide
 
 const UserProfile = lazy(() => import(/* webpackChunkName: "UserProfile" */ './User/Details/UserDetails'));
 
+const Tools = lazy(() => import(/* webpackChunkName: "Tools" */ './Tools/ToolsListing/Tools'));
 
 class App extends Component {
   render() {
@@ -79,8 +82,10 @@ class App extends Component {
                 <PrivateRoute exact path="/ingredients" component={IngredientsListing} />
                 <PrivateRoute exact path={"/ingredient/:nid"} component={IngredientDetail} />
                 <PrivateRoute exact path="/videos" component={Videos} />
+                <PrivateRoute exact path="/tools" component={Tools} />
                 <Route path="/privacy-policy" component={PrivacyPolicy} />
                 <Route path="/terms-and-conditions" component={TermsAndConditions} />
+                <Route exact path="/registration" component={UserRegistration} />
                 <Route component={NotFoundPage} />
               </Switch>
             </ProviderComponent>
@@ -120,7 +125,7 @@ function PublicRoute({ component: Component, ...rest }) {
         isLoggedIn() ? (
           <Redirect
           to={{
-            pathname: "/home",
+            pathname: HOMEPAGE,
             state: { from: props.location }
           }}
         />

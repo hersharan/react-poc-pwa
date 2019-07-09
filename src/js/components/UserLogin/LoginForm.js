@@ -7,7 +7,7 @@ import CryptoJS from 'crypto-js';
 import cookies from 'react-cookies';
 
 import { inlineLoading } from '../../helpers/utils';
-import { NEED_HELP, FORGOT_PASS, REMEMBER_LABEL, SIGN_IN } from '../../helpers/translations';
+import { NEED_HELP, FORGOT_PASS, REMEMBER_LABEL, SIGN_IN, NEW_USER_LABEL, REGISTER } from '../../helpers/translations';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -123,7 +123,7 @@ class LoginForm extends Component {
           }
           if (!values.password) {
             errors.password = 'Required';
-          } 
+          }
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
@@ -164,6 +164,7 @@ class LoginForm extends Component {
             </div>
             <div className="extended">
               <Link className="forget-password" to="/reset-password">{FORGOT_PASS}</Link>
+              <Link className="registration" to="/registration">{`${NEW_USER_LABEL} ${REGISTER}`}</Link>
               <Label check for="remember-me" className={classnames({"active": this.state.remember })} >
                 <Input
                   type="checkbox"

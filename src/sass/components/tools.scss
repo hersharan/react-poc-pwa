@@ -1,0 +1,28 @@
+.pdf {
+  text-align: center;
+  background-color: white;
+
+  .more-link {
+    margin: 0;
+  }
+
+  a {
+    margin: 10px;
+  }
+
+  .description {
+    padding: 0;
+    width: 75%;
+    margin: 30px auto;
+    max-height: 200px;
+    overflow: auto;
+  }
+}
+
+.pdf-listing {
+  .listing-block {
+    picture {
+      cursor: pointer;
+    }
+  }
+}

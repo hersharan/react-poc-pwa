@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import cookies from 'react-cookies';
 import { Row } from 'reactstrap';
+import queryString from 'query-string';
 
 import getUserLoginAction from './userLogin.actions';
 import LoginForm from './LoginForm';
@@ -12,6 +13,7 @@ import supportActions from '../SupportEmail/support.actions';
 import NoLoggedInHeader from '../Header/NoLoggedInHeader';
 import userDetailsActions from '../User/Details/userDetails.actions';
 import logoutActions from '../UserLogout/logout.actions';
+import {REGISTRATION_SUCCESS} from '../../helpers/translations';
 
 class UserLogin extends Component {
   constructor(props) {
@@ -27,6 +29,11 @@ class UserLogin extends Component {
   }
 
   componentDidMount() {
+    const parsed = queryString.parse(this.props.location.search);
+    const { registration } = parsed;
+    if (registration) {
+      this.setState({registration});
+    }
     const token = cookies.load('access_token', {path: '/'});
     if (token) {
       this.props.getUserInfo(token);
@@ -95,6 +102,9 @@ class UserLogin extends Component {
         <div className="user-login-wrapper col-12" style={{ backgroundImage: 'url(' + this.state.background + ')' }}>
           <NoLoggedInHeader />
           <div className="user-login">
+            {this.state.registration &&
+              <div className='msg'>{REGISTRATION_SUCCESS}</div>
+            }
             <LoginForm
               isOpen={!this.state.showForgot}
               onSubmitForm={this.toggleAcceptModal}

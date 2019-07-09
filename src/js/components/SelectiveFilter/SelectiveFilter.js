@@ -14,7 +14,8 @@ class SelectiveFilter extends React.Component {
     this.state = {
       dropdownOpen: false,
       currentOption: 0,
-      data: {0: 'All'}
+      allLabel: this.props.allLabel,
+      data: {0: this.props.allLabel}
     };
 
     this.toggle = this.toggle.bind(this);
@@ -22,8 +23,17 @@ class SelectiveFilter extends React.Component {
   }
 
   componentDidMount() {
-    this.props.staticData[0] = 'All';
+    this.props.staticData[0] = this.state.allLabel;
     this.setState({data: this.props.staticData});
+
+    if (this.props.selected) {
+      this.setState({currentOption: this.props.selected})
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    nextProps.staticData[0] = nextProps.allLabel;
+    this.setState({data: nextProps.staticData});
 
     if (this.props.selected) {
       this.setState({currentOption: this.props.selected})
@@ -58,10 +68,21 @@ class SelectiveFilter extends React.Component {
           <DropdownMenu>
             {
               Object.keys(this.state.data).map((item) => {
+                if (item.indexOf('header') !== -1) {
+                  return (
+                    <DropdownItem header
+                      key={item}
+                      id={`${Math.random().toFixed(2)}-option-${item}`}
+                      value={item}
+                      data-id={item}
+                    >{this.state.data[item]}
+                  </DropdownItem>
+                  )
+                }
                 return (
                   <DropdownItem
                     key={item}
-                    id={`option-${item}`}
+                    id={`${Math.random().toFixed(2)}-option-${item}`}
                     value={item}
                     onClick={this.handleOption}
                     data-id={item}
@@ -78,7 +99,12 @@ class SelectiveFilter extends React.Component {
 }
 
 SelectiveFilter.propTypes = {
-  handleSelect: PropTypes.func.isRequired
+  handleSelect: PropTypes.func.isRequired,
+  allLabel: PropTypes.string
+}
+
+SelectiveFilter.defaultProps = {
+  allLabel: 'All'
 }
 
 export default SelectiveFilter;

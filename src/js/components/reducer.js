@@ -29,6 +29,9 @@ import keynotes from './KeyNotes/keyNotes.reducer';
 import videosListing from './Videos/VideosListing/videos.reducer';
 import homepageSpotlight from './Homepage/Spotlight/spotlight.reducer';
 import videoDetails from './Videos/VideoDetails/videoDetails.reducer';
+import toolsListing from './Tools/ToolsListing/tools.reducer';
+import toolDetails from './Tools/ToolDetails/toolDetails.reducer';
+import {regions, markets, retailers, stores, languages, jobtitles, registration, userValidation} from './UserRegistration/userRegistration.reducer';
 
 const rootReducer = combineReducers({
   userLogin,
@@ -58,7 +61,17 @@ const rootReducer = combineReducers({
   keynotes,
   videosListing,
   homepageSpotlight,
-  videoDetails
+  videoDetails,
+  toolsListing,
+  toolDetails,
+  regions,
+  markets,
+  retailers,
+  stores,
+  languages,
+  jobtitles,
+  registration,
+  userValidation
 });
 
 export default rootReducer;

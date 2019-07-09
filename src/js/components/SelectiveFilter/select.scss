@@ -15,9 +15,16 @@
 
       .btn {
         &:after {
-          background: url('../../../../public/images/up_arrow.svg') no-repeat center center;
+          background: url('../../../images/up_arrow.svg') no-repeat center center;
         }
       }
+    }
+
+    .dropdown-header {
+      margin: 5px 0;
+      font-size: 12px;
+      font-style: italic;
+      color: rgba(0, 0, 0, 0.3);
     }
   }
 
@@ -38,7 +45,7 @@
       right: 5px;
       width: 15px;
       height: 25px;
-      background: url('../../../../public/images/down_arrow.svg') no-repeat center center;
+      background: url('../../../images/down_arrow.svg') no-repeat center center;
       background-size: contain;
     }
   }
@@ -62,6 +69,10 @@
       font-size: 13px;
       text-transform: uppercase;
       cursor: pointer;
+
+      &:hover {
+        color: #000;
+      }
     }
   }
 }
