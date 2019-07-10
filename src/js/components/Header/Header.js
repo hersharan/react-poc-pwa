@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 
 import '../../../sass/components/header.scss';
-import MenuIcon from '../../../../images/icons/menu.svg';
-import Logo from '../../../../src/images/Logo.svg';
+import MenuIcon from '../../../../public/images/menu.svg';
+import Logo from '../../../../public/images/Logo.svg';
 import { PrimaryNavigation } from '../PrimaryNavigation/PrimaryNavigation';
 import { isLoggedIn } from '../../helpers/authorization';
 import NoLoggedInHeader from './NoLoggedInHeader';
