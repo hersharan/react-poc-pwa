@@ -70,7 +70,8 @@ class UserLogin extends Component {
         this.redirectLogin();
       }
       else {
-        this.setState({showAcceptModal: true});
+        // this.setState({showAcceptModal: true});
+        this.redirectLogin();
       }
     }
   }
