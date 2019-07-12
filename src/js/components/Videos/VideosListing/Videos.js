@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import queryString from 'query-string';
 import {
   Row,
- } from 'reactstrap';
+} from 'reactstrap';
 
 import getVideosListingActions from './videos.actions';
 import getVideoDetailsActions from '../VideoDetails/videoDetails.actions';
@@ -38,21 +38,21 @@ class VideosListing extends Component {
     const { brand } = parsed;
     const brandId = brand ? brand : this.state.brandId;
 
-    if (brand && brand.length !==0 ) {
-      this.setState({brandId: brand})
+    if (brand && brand.length !== 0) {
+      this.setState({ brandId: brand })
     }
 
     this.props.getVideosListing(LIMIT, 0, brandId)
   }
 
   componentWillReceiveProps(nextProps) {
-    const {fetchingVideosList, fetchedVideosList, videosList, pager} = nextProps;
+    const { fetchingVideosList, fetchedVideosList, videosList, pager } = nextProps;
     if (fetchedVideosList && pager && this.state.fetched) {
       if (pager.count > LIMIT) {
-        this.setState({show: true})
+        this.setState({ show: true })
       }
       else {
-        this.setState({show: false})
+        this.setState({ show: false })
       }
 
       // Merging Results on showMore.
@@ -63,12 +63,12 @@ class VideosListing extends Component {
       });
     }
     else if (fetchingVideosList) {
-      this.setState({fetched: true})
+      this.setState({ fetched: true })
     }
   }
 
   getBrandId(id) {
-    this.setState({brandId: id, data: []});
+    this.setState({ brandId: id, data: [] });
     this.props.getVideosListing(LIMIT, 0, id);
   }
 
@@ -86,7 +86,7 @@ class VideosListing extends Component {
         <Template
           items={finalData}
           type="videos"
-          data={videoDetails && videoDetails[0] ? videoDetails[0] : {} }
+          data={videoDetails && videoDetails[0] ? videoDetails[0] : {}}
           fetching={fetchingVideoDetails}
           fetched={fetchedVideoDetails}
           getDetails={this.getVideo}
@@ -105,9 +105,29 @@ class VideosListing extends Component {
 
   getNextPageContent() {
     let offset = this.state.data.length;
-    this.setState({is_disabled: true});
+    this.setState({ is_disabled: true });
 
     this.props.getVideosListing(LIMIT, offset, this.state.brandId);
+  }
+
+  cacheMe = () => {
+    function cachePromise(url) {
+      return new Promise((resolve, reject) => {
+        try {
+          const elVideo = document.createElement('video');
+          const resolved = () => { console.log('Done--->', url); resolve(); };
+          elVideo.src = url;
+          elVideo.autoplay = true;
+          elVideo.onerror = resolved;
+          elVideo.onended = resolved;
+          elVideo.volume = 0;
+        } catch (e) {
+
+        }
+      });
+    }
+    const ps = this.state.data.map(({ videoUrl }) => cachePromise(videoUrl));
+    Promise.all(ps).then(() => console.log('Done all'));
   }
 
   // Full Page Content
@@ -125,6 +145,11 @@ class VideosListing extends Component {
             defaultBrand={this.state.brandId}
           />
         </div>
+        <Row>
+          <div className={classnames("col more-link")}>
+            <button className={classnames("btn btn-outline-secondary text-uppercase")} onClick={this.cacheMe}>Cache On Click</button>
+          </div>
+        </Row>
         {this.getListData()}
         <Row>
           <div className={classnames("col more-link", { "d-none": !this.state.show })}>
