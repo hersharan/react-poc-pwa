@@ -49,9 +49,9 @@ function Header(props) {
           {username &&
             <p className="welcome-msg">Welcome, {username}</p>
           }
-          <div className="toggle-bar" onClick={() => useMenu(!menu)}>
+          {/* <div className="toggle-bar" onClick={() => useMenu(!menu)}>
             <div className="icon" style={menuIcon}></div>
-          </div>
+          </div> */}
         </header>
         <PrimaryNavigation show={menu} />
       </>
