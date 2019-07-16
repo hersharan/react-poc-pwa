@@ -33,15 +33,15 @@ export function filterData(data, activities) {
     newData.forEach((item) => {
       let node = null;
       if (Object.prototype.hasOwnProperty.call(item, 'userBookmarkStatus')
-      || Object.prototype.hasOwnProperty.call(item, 'userFavouriteStatus')
-      || Object.prototype.hasOwnProperty.call(item, 'favourites')
-      || Object.prototype.hasOwnProperty.call(item, 'bookmarks')
-      || Object.prototype.hasOwnProperty.call(item, 'status')) {
+        || Object.prototype.hasOwnProperty.call(item, 'userFavouriteStatus')
+        || Object.prototype.hasOwnProperty.call(item, 'favourites')
+        || Object.prototype.hasOwnProperty.call(item, 'bookmarks')
+        || Object.prototype.hasOwnProperty.call(item, 'status')) {
         node = item;
       } else {
         activities.forEach((activity) => {
           if ((Object.prototype.hasOwnProperty.call(item, 'nid') && item.nid === activity.nid)
-          || (Object.prototype.hasOwnProperty.call(item, 'tid') && item.tid === activity.tid)) {
+            || (Object.prototype.hasOwnProperty.call(item, 'tid') && item.tid === activity.tid)) {
             node = { ...item, ...activity };
           }
         });
@@ -70,7 +70,7 @@ export function getUrlByContentType(type, nid, tid) {
     link = "/interactive-content/" + nid
   }
   else if (type === 'tools' || type === 'tools-pdf') {
-    if(tid && tid !== null){
+    if (tid && tid !== null) {
       link = `/folders/${tid}/${nid}`
     } else {
       link = "/folders/" + nid
@@ -96,7 +96,7 @@ export function compareArray(array1, array2) {
   if (array1.length !== array2.length)
     return false;
 
-  for (var i = 0, l=array1.length; i < l; i++) {
+  for (var i = 0, l = array1.length; i < l; i++) {
     // Check if we have nested arrays
     if (array1[i] instanceof Array && array2[i] instanceof Array) {
       // recurse into the nested arrays
@@ -117,9 +117,9 @@ export function uniqueData(data) {
   let filteredData = data.filter((item) => {
     return item !== null;
   })
-  if (filteredData && filteredData.length !==0) {
-    for( i=l; i >= 0; i--) {
-      if(flags[filteredData[i].nid]) continue;
+  if (filteredData && filteredData.length !== 0) {
+    for (i = l; i >= 0; i--) {
+      if (flags[filteredData[i].nid]) continue;
       flags[filteredData[i].nid] = true;
       output.push(filteredData[i]);
     }
@@ -156,4 +156,33 @@ export function removeDrupalToolbar() {
       document.getElementById('toolbar-administration').remove();
     }
   }
+}
+
+function formatBytes(bytes, decimals = 2) {
+  if (bytes === 0) return '0 Bytes';
+
+  const k = 1024;
+  const dm = decimals < 0 ? 0 : decimals;
+  const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+}
+
+export function getStorageLimit() {
+  return ((dispatch) => {
+    if ('storage' in navigator && 'estimate' in navigator.storage) {
+      navigator.storage.estimate()
+        .then(function (estimate) {
+          let data = {
+            msg: `Using ${formatBytes(estimate.usage)} out of ${formatBytes(estimate.quota)} bytes.`,
+            estimate: estimate,
+          };
+          dispatch({ type: 'FETCH_BROWSER_CACHE', payload: data });
+        });
+    } else {
+      dispatch({ type: 'FETCH_BROWSER_CACHE', payload: null });
+    }
+  })
 }

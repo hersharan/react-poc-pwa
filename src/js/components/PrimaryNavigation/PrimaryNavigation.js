@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import classnames from "classnames";
 import cookies from "react-cookies";
 import { Link } from "react-router-dom";
+import { Progress } from "reactstrap";
 
 import primaryNavigation from "./primaryNavigation.actions";
 import "../../../sass/components/primary-navigation.scss";
@@ -10,6 +11,7 @@ import HeadingLoader from "../Loaders/HeadingLoader";
 import { LOGOUT } from "../../helpers/translations";
 import UpArrow from '../../../images/up_arrow.svg';
 import DownArrow from '../../../images/down_arrow.svg';
+import {getStorageLimit} from '../../helpers/utils';
 
 class PrimaryNavigation extends Component {
   constructor() {
@@ -22,7 +24,7 @@ class PrimaryNavigation extends Component {
       menuId: 0,
       menuTree: [],
       fetched: false,
-      open: false
+      open: false,
     };
 
     this.renderPrimaryNavigation = this.renderPrimaryNavigation.bind(this);
@@ -36,8 +38,9 @@ class PrimaryNavigation extends Component {
   componentDidMount() {
     this.props.getPrimaryNavigations();
     this.handleOrientation();
+    this.props.getStorageLimit();
     this.setState({
-      token: cookies.load("access_token")
+      token: cookies.load("access_token"),
     });
   }
 
@@ -215,6 +218,7 @@ class PrimaryNavigation extends Component {
     const { fetchingPrimaryNavigations } = this.props;
     return (
       <>
+        <div className="text-center">{this.props.storage.msg}</div>
         {fetchingPrimaryNavigations
           ? this.renderLoader()
           : this.renderPrimaryNavigation()}
@@ -227,20 +231,22 @@ function mapStateToProps(state) {
   const {
     fetchingPrimaryNavigations,
     fetchedPrimaryNavigations,
-    primaryNavigations
+    primaryNavigations,
+    storage
   } = state.primaryNavigations;
 
   return {
     fetchingPrimaryNavigations,
     fetchedPrimaryNavigations,
-    primaryNavigations
+    primaryNavigations,
+    storage
   };
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    getPrimaryNavigations: () =>
-      dispatch(primaryNavigation.getPrimaryNavigations())
+    getPrimaryNavigations: () => dispatch(primaryNavigation.getPrimaryNavigations()),
+    getStorageLimit: ()=> dispatch(getStorageLimit()),
   };
 };
 

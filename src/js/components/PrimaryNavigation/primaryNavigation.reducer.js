@@ -2,6 +2,7 @@ import {
   FETCH_PRIMARY_NAVIGATIONS_LIST,
   FETCH_PRIMARY_NAVIGATIONS_LIST_SUCCESS,
   FETCH_PRIMARY_NAVIGATIONS_LIST_FAILURE,
+  FETCH_BROWSER_CACHE
 } from '../../helpers/actionConstants';
 
 export default function getPrimaryNavigations(state = {
@@ -9,6 +10,13 @@ export default function getPrimaryNavigations(state = {
   fetchedPrimaryNavigations: false,
   primaryNavigations: [],
   error: null,
+  storage: {
+    msg: '',
+    estimate: {
+      quota: 0,
+      usage: 0,
+    },
+  }
 }, action) {
   switch(action.type) {
     case FETCH_PRIMARY_NAVIGATIONS_LIST: {
@@ -35,7 +43,12 @@ export default function getPrimaryNavigations(state = {
         error: action.payload
       };
     }
-
+    case FETCH_BROWSER_CACHE: {
+      return {
+        ...state,
+        storage: action.payload
+      }
+    }
     default:
       return state;
   }
