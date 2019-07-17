@@ -12,6 +12,7 @@
     "crypto-js": "^3.1.9-1",
     "formik": "^1.5.3",
     "fs": "0.0.1-security",
+    "mgr-pdf-viewer-react": "^1.0.3",
     "node-sass": "^4.11.0",
     "query-string": "^6.4.2",
     "react": "^16.8.6",

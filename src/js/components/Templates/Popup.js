@@ -13,7 +13,7 @@ class Popup extends React.Component {
     return { __html: data };
   }
   render() {
-    const { toggle, modal, fetching, type, data, fetched } = this.props;
+    const { toggle, modal, fetching, type, data, fetched, PDFViewer } = this.props;
 
     return (
       <>
@@ -42,6 +42,7 @@ class Popup extends React.Component {
                   <LazyImages defaultImage={TEMPLATE_DEFAULT} src={data.imageSmall} />
                   <div className="description" dangerouslySetInnerHTML={this.createMarkup(data.description)}>
                   </div>
+                  {/* <PDFViewer document={{ url: 'https://arxiv.org/pdf/quant-ph/0410100.pdf' }} /> */}
                   <div className="col more-link">
                     <a className="btn btn-outline-secondary text-uppercase active" href={data.url} target="_blank" rel="noopener noreferrer">{TOOLS_VIEW_LABEL}</a>
                   </div>
