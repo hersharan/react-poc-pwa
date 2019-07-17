@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import classnames from "classnames";
 import cookies from "react-cookies";
 import { Link } from "react-router-dom";
-import { Progress } from "reactstrap";
 
 import primaryNavigation from "./primaryNavigation.actions";
 import "../../../sass/components/primary-navigation.scss";
