@@ -217,7 +217,7 @@ class PrimaryNavigation extends Component {
     const { fetchingPrimaryNavigations } = this.props;
     return (
       <>
-        <div className="text-center">{this.props.storage.msg}</div>
+        <div className="text-center">{this.props.storage && this.props.storage.msg}</div>
         {fetchingPrimaryNavigations
           ? this.renderLoader()
           : this.renderPrimaryNavigation()}
