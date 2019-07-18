@@ -34,7 +34,7 @@ module.exports = {
           new RegExp('/[^/]+\\.[^/]+$'),
         ],
         runtimeCaching: [{
-          urlPattern: new RegExp('.(?:png|jpg|jpeg|svg|gif|css|js|mp4)'),
+          urlPattern: new RegExp('.(?:png|jpg|jpeg|svg|gif|css|js|mp4|pdf)'),
           handler: 'NetworkFirst',
           options: {
             cacheName: 'app-cache',
