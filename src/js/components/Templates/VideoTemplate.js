@@ -36,7 +36,7 @@ class VideoTemplate extends Component {
   }
 
   videoModal(item) {
-    let data = getCacheMatch(item.url);
+    let data = getCacheMatch(item.videoUrl);
     if(data){
       console.log(data, 'response from cache load');
     }else{
