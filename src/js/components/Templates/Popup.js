@@ -1,19 +1,20 @@
 import React from 'react';
 import { Modal, ModalBody } from 'reactstrap';
 import PropTypes from 'prop-types';
+import PDFViewer from 'mgr-pdf-viewer-react';
 
 import '../../../sass/modules/_modal.scss';
 import { inlineLoading } from '../../helpers/utils';
 import { BANNER_DEFAULT, TEMPLATE_DEFAULT } from '../../helpers/appConstants';
 import LazyImages from '../Common/LazyImages';
-import {TOOLS_VIEW_LABEL} from '../../helpers/translations';
+import { TOOLS_VIEW_LABEL } from '../../helpers/translations';
 
 class Popup extends React.Component {
   createMarkup(data) {
     return { __html: data };
   }
   render() {
-    const { toggle, modal, fetching, type, data, fetched, PDFViewer } = this.props;
+    const { toggle, modal, fetching, type, data, fetched } = this.props;
 
     return (
       <>
@@ -42,11 +43,13 @@ class Popup extends React.Component {
                   <LazyImages defaultImage={TEMPLATE_DEFAULT} src={data.imageSmall} />
                   <div className="description" dangerouslySetInnerHTML={this.createMarkup(data.description)}>
                   </div>
-                  {/* <PDFViewer document={{ url: 'https://arxiv.org/pdf/quant-ph/0410100.pdf' }} /> */}
+                  {data && data.url ? <PDFViewer document={{
+                    url: data.url
+                  }} /> : null}
                   <div className="col more-link">
                     <a className="btn btn-outline-secondary text-uppercase active" href={data.url} target="_blank" rel="noopener noreferrer">{TOOLS_VIEW_LABEL}</a>
                   </div>
-                  </>
+                </>
                 }
               </div>
             }
