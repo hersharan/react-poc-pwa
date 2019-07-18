@@ -16,6 +16,7 @@ import VideoPopup from './Popup';
  */
 import { TEMPLATE_DEFAULT, BANNER_DEFAULT } from '../../helpers/appConstants';
 import LazyImages from '../Common/LazyImages';
+import { getCacheMatch } from '../../helpers/cacheUtils';
 
 class VideoTemplate extends Component {
   static contextType = GlobalBrands;
@@ -35,7 +36,12 @@ class VideoTemplate extends Component {
   }
 
   videoModal(item) {
-    this.props.getDetails(item.nid);
+    let data = getCacheMatch(item.url);
+    if(data){
+      console.log(data, 'response from cache load');
+    }else{
+      this.props.getDetails(item.nid);
+    }
     this.setState({ modal: true });
   }
 
