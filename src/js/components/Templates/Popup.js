@@ -28,7 +28,7 @@ class Popup extends React.Component {
               <div className="video">
                 {fetching ? <div className="loader text-center">{inlineLoading()}</div> : null}
                 {fetched &&
-                  <video width="640" height="360" controls poster={data && data.videoThumbnail ? data.videoThumbnail : BANNER_DEFAULT} autoPlay controlsList="nodownload">
+                  <video width="640" height="360" controls crossOrigin="anonymous" poster={data && data.videoThumbnail ? data.videoThumbnail : BANNER_DEFAULT} autoPlay controlsList="nodownload">
                     <source src={data && data.videoUrl} type="video/mp4" />
                     {data && data.videoSubtitle && <track src={data && data.videoSubtitle} default></track>}
                     Your browser does not support the video tag.
