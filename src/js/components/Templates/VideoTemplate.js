@@ -44,7 +44,7 @@ class VideoTemplate extends Component {
       this.props.getDetails(item.nid);
     }
     console.log('after ifs',data);
-    this.props.getDetails(item.nid);
+    // this.props.getDetails(item.nid);
     this.setState({ modal: true, selectedVideo: item });
   }
 
@@ -102,8 +102,8 @@ class VideoTemplate extends Component {
               {this.getRenderResults()}
               {this.state.modal &&
                 <VideoPopup
-                  fetching={fetching}
-                  fetched={fetched}
+                  fetching={false}
+                  fetched={true}
                   toggle={this.toggle}
                   modal={this.state.modal}
                   type={type}
