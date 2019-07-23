@@ -16,6 +16,7 @@ import { VIDEO_LISTING_TITLE, SEE_MORE } from '../../../helpers/translations';
 import ListingLoader from '../../Loaders/ListingLoader';
 import BrandList from '../../BrandList/BrandList';
 import '../../../../sass/components/videos.scss';
+import { getCacheMatch } from '../../../helpers/cacheUtils';
 
 class VideosListing extends Component {
   constructor(props) {
@@ -126,7 +127,14 @@ class VideosListing extends Component {
         }
       });
     }
-    const ps = this.state.data.map(({ videoUrl }) => cachePromise(videoUrl));
+    const ps = this.state.data.map(({ videoUrl }) => {
+      let data = getCacheMatch(videoUrl).then((response)=>{
+        console.log(response, '==');
+        if(response === undefined){
+          return cachePromise(videoUrl)
+        }
+      });
+    });
     Promise.all(ps).then(() => console.log('Done all'));
   }
 

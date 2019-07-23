@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f31961b462a872ac59f7",
+    "revision": "fe4adb38e723f173cf10",
     "url": "/css/BrandLanding.42c30cbc.css"
   },
   {
@@ -16,15 +16,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/Header.8c17cd25.css"
   },
   {
-    "revision": "100dcbe8d0f68b384b3a",
+    "revision": "a6eb59be83fb47b14676",
     "url": "/css/Homepage.436e055e.css"
   },
   {
-    "revision": "844e0529ff9b2a147b2b",
+    "revision": "2e69e7623e87acb25062",
     "url": "/css/IngredientDetail.f4fc634b.css"
   },
   {
-    "revision": "b6a85cd3dd72952f5f64",
+    "revision": "6120ddc7bc9bca7214dd",
     "url": "/css/ModuleListing.90b301e6.css"
   },
   {
@@ -32,15 +32,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/NewsDetail.d542618e.css"
   },
   {
-    "revision": "c0394ce66309fc611428",
+    "revision": "8a99d50af93a95b28919",
     "url": "/css/PrivacyPolicy.fad2bcd8.css"
   },
   {
-    "revision": "a21612802dadb797acbd",
+    "revision": "4deb39b5cbe67ac71a57",
     "url": "/css/ProductDetail.fd9c1a74.css"
   },
   {
-    "revision": "6e76f55e92ea26fb172d",
+    "revision": "5b93c1794cb52ba42369",
     "url": "/css/ProductsListing.6b631af4.css"
   },
   {
@@ -48,11 +48,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/ResetPassword.d1193d4b.css"
   },
   {
-    "revision": "3a364a0d99cb809de451",
+    "revision": "cb3c41f136a8d0f34e91",
     "url": "/css/TermsAndConditions.fad2bcd8.css"
   },
   {
-    "revision": "04f3b18096c2a638057f",
+    "revision": "b07c6f898bd1dfb83172",
     "url": "/css/Tools.c4be0357.css"
   },
   {
@@ -68,7 +68,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/UserRegistration.2625535b.css"
   },
   {
-    "revision": "96c0450418dddb0fb5ca",
+    "revision": "d1a8824fb1d3e136e1eb",
     "url": "/css/Videos.6f130136.css"
   },
   {
@@ -76,7 +76,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/common.a1948c81.css"
   },
   {
-    "revision": "bc775b68fa689dbba97b",
+    "revision": "c057aecd33006bc01340",
     "url": "/css/main.cc9c1aee.css"
   },
   {
@@ -104,12 +104,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/images/up_arrow.d03601d9.svg"
   },
   {
-    "revision": "7cf2f496002c2e1aad802a45c6a8e18f",
+    "revision": "10e8aef1841b3fb5c104ef60e3e5e62c",
     "url": "/index.html"
   },
   {
-    "revision": "f31961b462a872ac59f7",
-    "url": "/js/BrandLanding.ead5a992.bundle.js"
+    "revision": "fe4adb38e723f173cf10",
+    "url": "/js/BrandLanding.0487e89e.bundle.js"
   },
   {
     "revision": "a94cadc2d547662ff54b",
@@ -124,52 +124,52 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/Header.766f097c.bundle.js"
   },
   {
-    "revision": "100dcbe8d0f68b384b3a",
-    "url": "/js/Homepage.67412b18.bundle.js"
+    "revision": "a6eb59be83fb47b14676",
+    "url": "/js/Homepage.ace206be.bundle.js"
   },
   {
-    "revision": "844e0529ff9b2a147b2b",
-    "url": "/js/IngredientDetail.808b65c4.bundle.js"
+    "revision": "2e69e7623e87acb25062",
+    "url": "/js/IngredientDetail.664f61d0.bundle.js"
   },
   {
-    "revision": "b6a85cd3dd72952f5f64",
-    "url": "/js/ModuleListing.d27509c6.bundle.js"
+    "revision": "6120ddc7bc9bca7214dd",
+    "url": "/js/ModuleListing.d8edaa54.bundle.js"
   },
   {
     "revision": "f16db6d72c8428bc283e",
     "url": "/js/NewsDetail.60dd0c9b.bundle.js"
   },
   {
-    "revision": "53f2e2d8ef3b98643093",
-    "url": "/js/NewsListing.82abc0e2.bundle.js"
+    "revision": "8b880694c167d6033e60",
+    "url": "/js/NewsListing.6771452b.bundle.js"
   },
   {
     "revision": "3cd0461baa98d454124b",
     "url": "/js/NotFoundPage.77a8f096.bundle.js"
   },
   {
-    "revision": "c0394ce66309fc611428",
-    "url": "/js/PrivacyPolicy.2e3d8c31.bundle.js"
+    "revision": "8a99d50af93a95b28919",
+    "url": "/js/PrivacyPolicy.f7295468.bundle.js"
   },
   {
-    "revision": "a21612802dadb797acbd",
-    "url": "/js/ProductDetail.3341caa8.bundle.js"
+    "revision": "4deb39b5cbe67ac71a57",
+    "url": "/js/ProductDetail.d63d7866.bundle.js"
   },
   {
-    "revision": "6e76f55e92ea26fb172d",
-    "url": "/js/ProductsListing.3f2928d2.bundle.js"
+    "revision": "5b93c1794cb52ba42369",
+    "url": "/js/ProductsListing.31dcd08a.bundle.js"
   },
   {
     "revision": "8a4f4bc3d0c7d92acf51",
     "url": "/js/ResetPassword.247d2050.bundle.js"
   },
   {
-    "revision": "3a364a0d99cb809de451",
-    "url": "/js/TermsAndConditions.5435ee78.bundle.js"
+    "revision": "cb3c41f136a8d0f34e91",
+    "url": "/js/TermsAndConditions.292e860a.bundle.js"
   },
   {
-    "revision": "04f3b18096c2a638057f",
-    "url": "/js/Tools.3677d7d3.bundle.js"
+    "revision": "b07c6f898bd1dfb83172",
+    "url": "/js/Tools.b1b48a2a.bundle.js"
   },
   {
     "revision": "2cb2430b86f4f51ce877",
@@ -188,23 +188,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/UserRegistration.dc6dbb0c.bundle.js"
   },
   {
-    "revision": "96c0450418dddb0fb5ca",
-    "url": "/js/Videos.69fc04cb.bundle.js"
+    "revision": "d1a8824fb1d3e136e1eb",
+    "url": "/js/Videos.32e6b773.bundle.js"
   },
   {
     "revision": "8c6c7d16feef7ac52820",
     "url": "/js/common.fd7416a8.bundle.js"
   },
   {
-    "revision": "bc775b68fa689dbba97b",
-    "url": "/js/main.e4efa7aa.bundle.js"
-  },
-  {
-    "url": "/precache-manifest.e3b71234651e2ad30911a00de15e45fd.js"
-  },
-  {
-    "revision": "18fdc7badb4a7350f1bbac7856dcdaf3",
-    "url": "/service-worker.js"
+    "revision": "c057aecd33006bc01340",
+    "url": "/js/main.4b686c1a.bundle.js"
   },
   {
     "revision": "e1da21c14cddfd663cb75baff71c6858",
