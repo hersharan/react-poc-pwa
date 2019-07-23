@@ -23,7 +23,8 @@ class VideoTemplate extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false
+      modal: false,
+      selectedVideo: {}
     }
 
     this.createMarkup = this.createMarkup.bind(this);
@@ -44,7 +45,7 @@ class VideoTemplate extends Component {
     }
     console.log('after ifs',data);
     this.props.getDetails(item.nid);
-    this.setState({ modal: true });
+    this.setState({ modal: true, selectedVideo: item });
   }
 
   toggle() {
@@ -106,7 +107,7 @@ class VideoTemplate extends Component {
                   toggle={this.toggle}
                   modal={this.state.modal}
                   type={type}
-                  data={data}
+                  data={this.state.selectedVideo}
                   videoSrc={data.videoUrl}
                   className={'popup-wrapper'}
                 />
