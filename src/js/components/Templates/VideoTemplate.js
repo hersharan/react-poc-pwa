@@ -43,6 +43,7 @@ class VideoTemplate extends Component {
       this.props.getDetails(item.nid);
     }
     console.log('after ifs',data);
+    this.props.getDetails(item.nid);
     this.setState({ modal: true });
   }
 
