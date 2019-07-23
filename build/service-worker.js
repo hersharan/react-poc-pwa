@@ -15,7 +15,7 @@ importScripts("/workbox-v4.3.0/workbox-sw.js");
 workbox.setConfig({modulePathPrefix: "/workbox-v4.3.0"});
 
 importScripts(
-  "/precache-manifest.61c24279411dd0bd5af37dac2976fccf.js"
+  "/precache-manifest.0731ccfc5b06e808fe8ec692a9a3877d.js"
 );
 
 self.addEventListener('message', (event) => {
@@ -39,4 +39,5 @@ workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/i
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
 
-workbox.routing.registerRoute(/.(?:png|jpg|jpeg|svg|gif|css|js|mp4)/, new workbox.strategies.NetworkFirst({ "cacheName":"app-cache", plugins: [new workbox.expiration.Plugin({ maxEntries: 50, maxAgeSeconds: 31536000, purgeOnQuotaError: false }), new workbox.backgroundSync.Plugin("app", { maxRetentionTime: 3600 }), new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] })] }), 'GET');
+workbox.routing.registerRoute(/.(?:png|jpg|jpeg|svg|gif|css|js|pdf)/, new workbox.strategies.NetworkFirst({ "cacheName":"app-cache", plugins: [new workbox.expiration.Plugin({ maxEntries: 50, maxAgeSeconds: 31536000, purgeOnQuotaError: false }), new workbox.backgroundSync.Plugin("app", { maxRetentionTime: 3600 }), new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] })] }), 'GET');
+workbox.routing.registerRoute(/.(?:mp4)/, new workbox.strategies.CacheFirst({ "cacheName":"app-cache-video", plugins: [new workbox.expiration.Plugin({ maxEntries: 50, maxAgeSeconds: 31536000, purgeOnQuotaError: false }), new workbox.cacheableResponse.Plugin({ statuses: [ 200 ] })] }), 'GET');

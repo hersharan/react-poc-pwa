@@ -66,7 +66,7 @@ class VideoTemplate extends Component {
                   </div>
                 </div>
               </div> */}
-              <video width="360" height="240" controls 
+              <video width="360" height="240" controls crossOrigin="anonymous"
                 poster={item && item.videoThumbnail ? item.videoThumbnail : BANNER_DEFAULT} 
                 autoPlay={false} controlsList="nodownload">
                 <source src={item && item.videoUrl} type="video/mp4" />
