@@ -14,7 +14,7 @@ import VideoPopup from './Popup';
 /*
  *  Importing Custom Libraries.
  */
-import { TEMPLATE_DEFAULT } from '../../helpers/appConstants';
+import { TEMPLATE_DEFAULT, BANNER_DEFAULT } from '../../helpers/appConstants';
 import LazyImages from '../Common/LazyImages';
 
 class VideoTemplate extends Component {
@@ -22,7 +22,8 @@ class VideoTemplate extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false
+      modal: false,
+      selectedVideo: {}
     }
 
     this.createMarkup = this.createMarkup.bind(this);
@@ -34,13 +35,13 @@ class VideoTemplate extends Component {
     return { __html: data };
   }
 
-  videoModal(item){
-    this.props.getDetails(item.nid);
-    this.setState({modal: true});
+  videoModal(item) {
+    // this.props.getDetails(item.nid);
+    this.setState({ modal: true, selectedVideo: item });
   }
 
   toggle() {
-    this.setState({modal: !this.state.modal});
+    this.setState({ modal: !this.state.modal });
   }
 
   getRenderResults() {
@@ -59,13 +60,20 @@ class VideoTemplate extends Component {
                   </div>
                 </div>
               </div>
+              {/* <video width="360" height="240" controls crossOrigin="anonymous"
+                poster={item && item.videoThumbnail ? item.videoThumbnail : BANNER_DEFAULT} 
+                autoPlay={false} controlsList="nodownload">
+                <source src={item && item.videoUrl} type="video/mp4" />
+                {item && item.videoSubtitle && <track src={item && item.videoSubtitle} default></track>}
+                Your browser does not support the video tag.
+                  </video> */}
               {item.title &&
                 <CardTitle tag='h2' dangerouslySetInnerHTML={this.createMarkup(item.title)} />
               }
               {item.brandName &&
                 <CardSubtitle tag='h3' className="brand-title">{item.brandName}</CardSubtitle>
               }
-              {item.brand !==0 &&
+              {item.brand !== 0 &&
                 <CardSubtitle tag='h3' className="brand-title">{this.context[item.brand]}</CardSubtitle>
               }
             </Card>
@@ -76,7 +84,7 @@ class VideoTemplate extends Component {
   }
 
   render() {
-    const {fetching, data, type, fetched} = this.props;
+    const { fetching, data, type, fetched } = this.props;
 
     return (
       <GlobalBrandsConsumer>
@@ -86,12 +94,13 @@ class VideoTemplate extends Component {
               {this.getRenderResults()}
               {this.state.modal &&
                 <VideoPopup
-                  fetching={fetching}
-                  fetched={fetched}
+                  fetching={false}
+                  fetched={true}
                   toggle={this.toggle}
                   modal={this.state.modal}
                   type={type}
-                  data={data}
+                  data={this.state.selectedVideo}
+                  videoSrc={data.videoUrl}
                   className={'popup-wrapper'}
                 />
               }

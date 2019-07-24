@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import classnames from "classnames";
 import cookies from "react-cookies";
 import { Link } from "react-router-dom";
-import { Progress } from "reactstrap";
 
 import primaryNavigation from "./primaryNavigation.actions";
 import "../../../sass/components/primary-navigation.scss";
@@ -218,7 +217,7 @@ class PrimaryNavigation extends Component {
     const { fetchingPrimaryNavigations } = this.props;
     return (
       <>
-        <div className="text-center">{this.props.storage.msg}</div>
+        <div className="text-center">{this.props.storage && this.props.storage.msg}</div>
         {fetchingPrimaryNavigations
           ? this.renderLoader()
           : this.renderPrimaryNavigation()}

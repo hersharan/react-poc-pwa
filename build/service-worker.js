@@ -15,7 +15,7 @@ importScripts("/workbox-v4.3.0/workbox-sw.js");
 workbox.setConfig({modulePathPrefix: "/workbox-v4.3.0"});
 
 importScripts(
-  "/precache-manifest.3419fa600597d273fb605ed0da897aa7.js"
+  "/precache-manifest.a6b550026df91441990e16a4f2475cab.js"
 );
 
 self.addEventListener('message', (event) => {
@@ -39,4 +39,4 @@ workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/i
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
 
-workbox.routing.registerRoute(/.(?:png|jpg|jpeg|svg|gif|css|js|mp4)/, new workbox.strategies.NetworkFirst({ "cacheName":"app-cache", plugins: [new workbox.expiration.Plugin({ maxEntries: 50, maxAgeSeconds: 31536000, purgeOnQuotaError: false }), new workbox.backgroundSync.Plugin("app", { maxRetentionTime: 3600 }), new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] })] }), 'GET');
+workbox.routing.registerRoute(/.(?:png|jpg|jpeg|svg|gif|css|js|pdf|mkv|mp4)/, new workbox.strategies.CacheFirst({ "cacheName":"app-cache", plugins: [new workbox.expiration.Plugin({ maxEntries: 500, maxAgeSeconds: 86400, purgeOnQuotaError: false }), new workbox.backgroundSync.Plugin("app-sync", { maxRetentionTime: 3600 }), new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] })] }), 'GET');

@@ -1,4 +1,4 @@
-const {GenerateSW} = require('workbox-webpack-plugin')
+const { GenerateSW } = require('workbox-webpack-plugin')
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 
 module.exports = {
@@ -34,18 +34,18 @@ module.exports = {
           new RegExp('/[^/]+\\.[^/]+$'),
         ],
         runtimeCaching: [{
-          urlPattern: new RegExp('.(?:png|jpg|jpeg|svg|gif|css|js|mp4)'),
-          handler: 'NetworkFirst',
+          urlPattern: new RegExp('.(?:png|jpg|jpeg|svg|gif|css|js|pdf|mkv|mp4)'),
+          handler: 'CacheFirst',
           options: {
             cacheName: 'app-cache',
             // Configure custom cache expiration.
             expiration: {
-              maxEntries: 50,
-              maxAgeSeconds: 365*24*60*60,
+              maxEntries: 500,
+              maxAgeSeconds: 24 * 60 * 60,
             },
             // Configure background sync.
             backgroundSync: {
-              name: 'app',
+              name: 'app-sync',
               options: {
                 maxRetentionTime: 60 * 60,
               },
@@ -56,11 +56,29 @@ module.exports = {
             },
           },
         }],
+        // {
+        //   urlPattern: new RegExp('.(?:mp4)'),
+        //   handler: 'CacheFirst',
+        //   options: {
+        //     cacheName: 'app-cache-video',
+        //     // Configure custom cache expiration.
+        //     expiration: {
+        //       maxEntries: 50,
+        //       maxAgeSeconds: 365 * 24 * 60 * 60,
+        //     },
+        //     // Configure which responses are considered cacheable.
+        //     cacheableResponse: {
+        //       statuses: [200],
+        //     },
+        //   }
+        // }
       }
 
       config.plugins.push(new GenerateSW(workboxConfigProd),
-    )}
+      )
+    }
 
     return config
   }
 }
+

@@ -52,7 +52,7 @@ function ServiceFailure() {
     <div className="error service-failure flex-column">
       <div className="service-failure-content col-12">
         <figure className="text-center">
-          <img src="/themes/custom/elx_frontend/images/defaults/serviceFailure.svg" alt="service-failure" />
+          <img src="/images/defaults/serviceFailure.svg" alt="service-failure" />
           <figcaption>Unfortunately the service failed.</figcaption>
         </figure>
         <button onClick={refresh} className="bb-btn-black col-5 m-auto">Try Again</button>
@@ -84,7 +84,7 @@ export function ProductCardsError(category) {
   return (
     <div className="error">
       <figure className="text-center">
-        <img src="/themes/custom/elx_frontend/images/defaults/productcards.svg" alt="products-cards error" className="my-4" />
+        <img src="/images/defaults/productcards.svg" alt="products-cards error" className="my-4" />
         <figcaption className="my-4">{`Products under the section ${category} will appear here.`}</figcaption>
       </figure>
     </div>
