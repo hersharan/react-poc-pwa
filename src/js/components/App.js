@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import { LOADER, HOMEPAGE } from '../helpers/appConstants';
 import { isLoggedIn } from '../helpers/authorization';
 import ProviderComponent from './GlobalBrands';
+import Support from './Common/Support';
 
 const Loader = <section className="loading"><img className="loading-icon" src={LOADER} alt="loader" /></section>;
 
@@ -17,11 +18,11 @@ const Homepage = lazy(() => import(/* webpackChunkName: "Homepage" */ './Homepag
 
 const Header = lazy(() => import(/* webpackChunkName: "Header" */ './Header/Header'));
 
-const NewsListing  = lazy(() => import(/* webpackChunkName: "NewsListing" */ './Trendings/TrendingListing/TrendingListing'));
+const NewsListing = lazy(() => import(/* webpackChunkName: "NewsListing" */ './Trendings/TrendingListing/TrendingListing'));
 
 const NewsDetail = lazy(() => import(/* webpackChunkName: "NewsDetail" */ './Trendings/TrendingDetails/TrendingDetails'));
 
-const Footer = lazy(()=> import(/* webpackChunkName: "Footer" */ './Footer/Footer'));
+const Footer = lazy(() => import(/* webpackChunkName: "Footer" */ './Footer/Footer'));
 
 const ResetPassword = lazy(() => import(/* webpackChunkName: "ResetPassword" */ './ResetPassword/index'));
 
@@ -62,7 +63,7 @@ class App extends Component {
           <div className="main-content col-12">
             <ProviderComponent>
               <Switch>
-                <Route exact path="/" render={() => isLoggedIn ? <Redirect to="/home"/> : <Redirect to="/login" />}/>
+                <Route exact path="/" render={() => isLoggedIn ? <Redirect to="/home" /> : <Redirect to="/login" />} />
                 <Redirect from="/user/login" to="/login" />
                 <Redirect from="/user/logout" to="/logout" />
                 <PrivateRoute exact path="/home" component={Homepage} />
@@ -86,6 +87,7 @@ class App extends Component {
                 <Route path="/privacy-policy" component={PrivacyPolicy} />
                 <Route path="/terms-and-conditions" component={TermsAndConditions} />
                 <Route exact path="/registration" component={UserRegistration} />
+                <Route exact path="/support" component={Support} />
                 <Route component={NotFoundPage} />
               </Switch>
             </ProviderComponent>
@@ -105,13 +107,13 @@ function PrivateRoute({ component: Component, ...rest }) {
         isLoggedIn() ? (
           <Component {...props} />
         ) : (
-          <Redirect
-            to={{
-              pathname: "/login",
-              state: { from: props.location }
-            }}
-          />
-        )
+            <Redirect
+              to={{
+                pathname: "/login",
+                state: { from: props.location }
+              }}
+            />
+          )
       }
     />
   );
@@ -124,14 +126,14 @@ function PublicRoute({ component: Component, ...rest }) {
       render={props =>
         isLoggedIn() ? (
           <Redirect
-          to={{
-            pathname: HOMEPAGE,
-            state: { from: props.location }
-          }}
-        />
+            to={{
+              pathname: HOMEPAGE,
+              state: { from: props.location }
+            }}
+          />
         ) : (
-          <Component {...props} />
-        )
+            <Component {...props} />
+          )
       }
     />
   );
